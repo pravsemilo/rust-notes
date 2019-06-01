@@ -11,7 +11,7 @@ curl https://sh.rustup.rs -sSf | sh
 	* Enable installation from beta and nightly release channels.
 	* Support for additional cross-compilation targets.
 * To update installation :
-```bash
+```rust
 rustup update
 ```
 ## Configuring the `PATH` environment variable
