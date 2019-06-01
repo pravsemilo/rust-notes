@@ -14,7 +14,7 @@
 * Following requirements will be satisfied :
 	* Official binary releases.
 	* Automated builds is setup, but may not be running tests.
-# Tier 2
+# Tier 2.5
 * Can be thought of as `"guaranteed to build" but without builds available through `rustup`.
 * Automated tests are not run.
 * Following requirements will be satisfied :
