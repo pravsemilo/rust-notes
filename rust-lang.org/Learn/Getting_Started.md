@@ -43,14 +43,14 @@
 cargo new hello-rust
 ```
 * This will create a new directory called `hello-rust` with the following diretory structure.
+	* `Cargo.toml` - Mainfest file for Rust. It's where you keep metadata for your project and its dependencies.
+	* `src/main.rs` - Contains application code.
 ```
 hello-rust
 |- Cargo.toml
 |- src
   |- main.rs
 ```
-	* `Cargo.toml` - Mainfest file for Rust. It's where you keep metadata for your project and its dependencies.
-	* `src/main.rs` - Contains application code.
 * To run the project.
 ```bash
 cargo run
