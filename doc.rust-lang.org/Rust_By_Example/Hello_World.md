@@ -76,7 +76,72 @@ fn main() {
 * `std::fmt` contains many `traits` which govern the display of text. For example :
 	* `fmt::Debug` : Uses the `{:?}` marker. Formats text for debugging purposes.
 	* `fmt::Display` : Uses the `{}` marker. Formats text in a more elegant, user friendly fashion.
+* Implementing the `fmt::Display` trait automagically implements the `ToString` trait which allows us to convert the type to `String`.
+### Debug
+* All types which want to use `std::fmt` formatting `traits` require an implementation to be printable.
+* Automatic implementations are only provided for types such as in the `std` library.
+* `fmt::Debug` makes this very easy.
+	* All types can `derive` (automatically create) the `fmt::Debug` implementation.
+	* This is not true for `fmt:Display` which must be manually implemented.
+```rust
+// This structure cannot be printed either with `fmt::Display` or
+// with `fmt::Debug`
+struct UnPrintable(i32);
+
+// The `derive` attribute automatically creates the implementation
+// required to make this `struct` printable with `fmt::Debug`.
+#[derive(Debug)]
+struct DebugPrintable(i32);
+```
+* All `std` library types automatically are printable with `{:?}` too :
+```rust
+// Derive the `fmt::Debug` implementation for `Structure`. `Structure`
+// is a structure which contains a single `i32`.
+#[derive(Debug)]
+struct Structure(i32);
+
+// Put a `Structure` inside of the structure `Deep`. Make it printable
+// also.
+#[derive(Debug)]
+struct Deep(Structure);
+
+fn main() {
+    // Printing with `{:?}` is similar to with `{}`.
+    println!("{:?} months in a year.", 12);
+    println!("{1:?} {0:?} is the {actor:?} name.",
+             "Slater",
+             "Christian",
+             actor="actor's");
+
+    // `Structure` is printable!
+    println!("Now {:?} will print!", Structure(3));
+
+    // The problem with `derive` is there is no control over how
+    // the results look. What if I want this to just show a `7`?
+    println!("Now {:?} will print!", Deep(Structure(7)));
+}
+```
+* `fmt::Debug` makes things printable but at the cost of elegance.
+	* Rust also provides pretty printing with `{:?}`.
+```rust
+#[derive(Debug)]
+struct Person<'a> {
+    name: &'a str,
+    age: u8
+}
+
+fn main() {
+    let name = "Peter";
+    let age = 27;
+    let peter = Person { name, age };
+
+    // Pretty print
+    println!("{:#?}", peter);
+}
+```
+* One can manually implement `fmt::Display` to control the display.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/hello.html
 * https://doc.rust-lang.org/stable/rust-by-example/hello/comment.html
 * https://doc.rust-lang.org/stable/rust-by-example/hello/print.html
+* https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_debug.html
