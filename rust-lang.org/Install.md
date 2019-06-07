@@ -7,7 +7,7 @@ curl https://sh.rustup.rs -sSf | sh
 * Rust is installed and managed by the `rustup` tool.
 * Rust has a 6-week rapid release process and supports many platforms. So there are many builds of Rust available at any time.
 * `rustup` helps to :
-	* Manage these builds in a consisten way for each platform.
+	* Manage these builds in a consistent way for each platform.
 	* Enable installation from beta and nightly release channels.
 	* Support for additional cross-compilation targets.
 * To update installation :
