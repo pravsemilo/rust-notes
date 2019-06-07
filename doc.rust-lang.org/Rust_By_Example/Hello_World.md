@@ -82,7 +82,7 @@ fn main() {
 * Automatic implementations are only provided for types such as in the `std` library.
 * `fmt::Debug` makes this very easy.
 	* All types can `derive` (automatically create) the `fmt::Debug` implementation.
-	* This is not true for `fmt:Display` which must be manually implemented.
+	* This is not true for `fmt::Display` which must be manually implemented.
 	```rust
 	// This structure cannot be printed either with `fmt::Display` or
 	// with `fmt::Debug`
@@ -122,7 +122,7 @@ fn main() {
 }
 ```
 * `fmt::Debug` makes things printable but at the cost of elegance.
-	* Rust also provides pretty printing with `{:?}`.
+	* Rust also provides pretty printing with `{:#?}`.
 	```rust
 	#[derive(Debug)]
 	struct Person<'a> {
@@ -144,7 +144,6 @@ fn main() {
 * `fmt::Debug` is not compact and clean.
 * To customize the appearance, we need to manually implement `fmt::Display`, which uses the `{}` print marker.
 ```rust
-
 #![allow(unused_variables)]
 fn main() {
 // Import (via `use`) the `fmt` module to make it available.
@@ -170,62 +169,62 @@ impl fmt::Display for Structure {
 * Because there is no ideal style for all types and the `std` library doesn't presume to dictate one, `fmt::Display` is not implemented for `Vec<T>` or for any other generic containers.
 	* `fmt::Debug` should be used for these generic cases.
 	* For non generic new container types, `fmt::Display` can be implemented.
-```rust
-use std::fmt; // Import `fmt`
+	```rust
+	use std::fmt; // Import `fmt`
 
-// A structure holding two numbers. `Debug` will be derived so the results can
-// be contrasted with `Display`.
-#[derive(Debug)]
-struct MinMax(i64, i64);
+	// A structure holding two numbers. `Debug` will be derived so the results can
+	// be contrasted with `Display`.
+	#[derive(Debug)]
+	struct MinMax(i64, i64);
 
-// Implement `Display` for `MinMax`.
-impl fmt::Display for MinMax {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Use `self.number` to refer to each positional data point.
-        write!(f, "({}, {})", self.0, self.1)
-    }
-}
+	// Implement `Display` for `MinMax`.
+	impl fmt::Display for MinMax {
+	    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+		// Use `self.number` to refer to each positional data point.
+		write!(f, "({}, {})", self.0, self.1)
+	    }
+	}
 
-// Define a structure where the fields are nameable for comparison.
-#[derive(Debug)]
-struct Point2D {
-    x: f64,
-    y: f64,
-}
+	// Define a structure where the fields are nameable for comparison.
+	#[derive(Debug)]
+	struct Point2D {
+	    x: f64,
+	    y: f64,
+	}
 
-// Similarly, implement for Point2D
-impl fmt::Display for Point2D {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Customize so only `x` and `y` are denoted.
-        write!(f, "x: {}, y: {}", self.x, self.y)
-    }
-}
+	// Similarly, implement for Point2D
+	impl fmt::Display for Point2D {
+	    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+		// Customize so only `x` and `y` are denoted.
+		write!(f, "x: {}, y: {}", self.x, self.y)
+	    }
+	}
 
-fn main() {
-    let minmax = MinMax(0, 14);
+	fn main() {
+	    let minmax = MinMax(0, 14);
 
-    println!("Compare structures:");
-    println!("Display: {}", minmax);
-    println!("Debug: {:?}", minmax);
+	    println!("Compare structures:");
+	    println!("Display: {}", minmax);
+	    println!("Debug: {:?}", minmax);
 
-    let big_range =   MinMax(-300, 300);
-    let small_range = MinMax(-3, 3);
+	    let big_range =   MinMax(-300, 300);
+	    let small_range = MinMax(-3, 3);
 
-    println!("The big range is {big} and the small is {small}",
-             small = small_range,
-             big = big_range);
+	    println!("The big range is {big} and the small is {small}",
+		     small = small_range,
+		     big = big_range);
 
-    let point = Point2D { x: 3.3, y: 7.2 };
+	    let point = Point2D { x: 3.3, y: 7.2 };
 
-    println!("Compare points:");
-    println!("Display: {}", point);
-    println!("Debug: {:?}", point);
+	    println!("Compare points:");
+	    println!("Display: {}", point);
+	    println!("Debug: {:?}", point);
 
-    // Error. Both `Debug` and `Display` were implemented but `{:b}`
-    // requires `fmt::Binary` to be implemented. This will not work.
-    // println!("What does Point2D look like in binary: {:b}?", point);
-}
-```
+	    // Error. Both `Debug` and `Display` were implemented but `{:b}`
+	    // requires `fmt::Binary` to be implemented. This will not work.
+	    // println!("What does Point2D look like in binary: {:b}?", point);
+	}
+	```
 #### Testcase : List
 * Implementing `fmt::Display` for a structure where the elements must each be handled sequentially is tricky.
 	* The problem is that each `write!` generates a `fmt::Result`.
