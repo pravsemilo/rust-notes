@@ -2,7 +2,7 @@
 ## [The Rust Programming Lanauge](https://doc.rust-lang.org/book/)
 * Also nicknamed "the book".
 ## [Rustlings](https://github.com/rust-lang/rustlings/)
-* Guides through downlading and setting up the Rust toolchain.
+* Guides through downloading and setting up the Rust toolchain.
 * Teaches you the basics of reading and writing Rust syntax on the command line.
 * Alternative to `Rust By Example`.
 ## [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/)
@@ -12,7 +12,7 @@
 ### [The Standard](https://doc.rust-lang.org/std/index.html)
 * Comprehensive guide to the Rust standard library APIs.
 ### [Edition Guide](https://doc.rust-lang.org/edition-guide/index.html)
-* Guid to the Rust editions.
+* Guide to the Rust editions.
 ### [Cargo Book](https://doc.rust-lang.org/cargo/index.html)
 * Book on Rust's package manager and build system.
 ### [Rustdoc Book](https://doc.rust-lang.org/rustdoc/index.html)
