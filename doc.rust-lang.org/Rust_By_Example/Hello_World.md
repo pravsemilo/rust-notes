@@ -231,50 +231,50 @@ fn main() {
 	* The problem is that each `write!` generates a `fmt::Result`.
 	* This requires to deal with all the results.
 	* Rust provides the `?` operator for this purpose.
-```rust
-// Try `write!` to see if it errors. If it errors, return
-// the error. Otherwise continue.
-write!(f, "{}", value)?;
-```
+	```rust
+	// Try `write!` to see if it errors. If it errors, return
+	// the error. Otherwise continue.
+	write!(f, "{}", value)?;
+	```
 	* Alternatively you can use the `try!` macro.
 		* It is bit more verbose and no longer recommended.
-```rust
-try!(write!(f, "{}", value));
-```
+		```rust
+		try!(write!(f, "{}", value));
+		```
 	* With `?` available, implementing `fmt::Display` for a `Vec` is straightforward.
-```rust
-use std::fmt; // Import the `fmt` module.
+	```rust
+	use std::fmt; // Import the `fmt` module.
 
-// Define a structure named `List` containing a `Vec`.
-struct List(Vec<i32>);
+	// Define a structure named `List` containing a `Vec`.
+	struct List(Vec<i32>);
 
-impl fmt::Display for List {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Extract the value using tuple indexing
-        // and create a reference to `vec`.
-        let vec = &self.0;
+	impl fmt::Display for List {
+	    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+		// Extract the value using tuple indexing
+		// and create a reference to `vec`.
+		let vec = &self.0;
 
-        write!(f, "[")?;
+		write!(f, "[")?;
 
-        // Iterate over `v` in `vec` while enumerating the iteration
-        // count in `count`.
-        for (count, v) in vec.iter().enumerate() {
-            // For every element except the first, add a comma.
-            // Use the ? operator, or try!, to return on errors.
-            if count != 0 { write!(f, ", ")?; }
-            write!(f, "{}", v)?;
-        }
+		// Iterate over `v` in `vec` while enumerating the iteration
+		// count in `count`.
+		for (count, v) in vec.iter().enumerate() {
+		    // For every element except the first, add a comma.
+		    // Use the ? operator, or try!, to return on errors.
+		    if count != 0 { write!(f, ", ")?; }
+		    write!(f, "{}", v)?;
+		}
 
-        // Close the opened bracket and return a fmt::Result value
-        write!(f, "]")
-    }
-}
+		// Close the opened bracket and return a fmt::Result value
+		write!(f, "]")
+	    }
+	}
 
-fn main() {
-    let v = List(vec![1, 2, 3]);
-    println!("{}", v);
-}
-```
+	fn main() {
+	    let v = List(vec![1, 2, 3]);
+	    println!("{}", v);
+	}
+	```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/hello.html
 * https://doc.rust-lang.org/stable/rust-by-example/hello/comment.html
