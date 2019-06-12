@@ -3,10 +3,10 @@
 ## Performance
 * Fast & Memory Efficient : No runtime or garbage collector.
 * Can power performance critical services and also run on embedded devices.
-* Easily intergrate with other languages.
+* Easily intergate with other languages.
 ## Reliability
 * Rich type system and ownership model guarantee memory saftery and thread safety.
-* Helps to eliminate may classes of bugs at compile time.
+* Helps to eliminate many classes of bugs at compile time.
 ## Productivity
 * Great documentation.
 * Friendly compiler with useful error messages.
