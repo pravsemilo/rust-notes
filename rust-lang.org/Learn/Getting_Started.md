@@ -37,7 +37,7 @@
 	```bash
 	$ rustup component add clippy
 	```
-# Generatng a new project
+# Generating a new project
 * To create a new project
 ```bash
 $ cargo new hello-rust
@@ -64,11 +64,11 @@ $ cargo run
 ferris-say = "0.1"
 ```
 * To install the dependency :
+	* This command creates a new file for us called, `Cargo.lock`.
+	* This file is a log of the exact version of dependencies we are using locally.
 ```bash
 $ cargo build
 ```
-	* This command created a new file for us, `Cargo.lock`.
-	* This file is a log of the exact version of dependencies we are using locally.
 * To use this dependency, edit `main.rs` :
 ```rust
 use ferris_says::say
