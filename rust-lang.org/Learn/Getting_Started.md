@@ -61,14 +61,14 @@ $ cargo run
 * To add a dependency, edit your `Cargo.toml`
 ```rust
 [dependencies]
-ferris-say = "0.1"
+ferris-says = "0.1"
 ```
 * To install the dependency :
-	* This command creates a new file for us called, `Cargo.lock`.
-	* This file is a log of the exact version of dependencies we are using locally.
 ```bash
 $ cargo build
 ```
+* This command creates a new file for us called, `Cargo.lock`.
+* This file is a log of the exact version of dependencies we are using locally.
 * To use this dependency, edit `main.rs` :
 ```rust
 use ferris_says::say
