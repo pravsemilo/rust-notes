@@ -1,6 +1,6 @@
 # Using rustup (Recommended)
 ```bash
-curl https://sh.rustup.rs -sSf | sh
+$ curl https://sh.rustup.rs -sSf | sh
 ```
 # Notes about Rust installation
 ## Toolchain management with `rustup`
@@ -12,7 +12,7 @@ curl https://sh.rustup.rs -sSf | sh
 	* Support for additional cross-compilation targets.
 * To update installation :
 ```bash
-rustup update
+$ rustup update
 ```
 ## Configuring the `PATH` environment variable
 * All tools are installed to the `~/.cargo/bin` directory. This is where you will find the Rust toolchain, including `rustc`, `cargo` and `rustup`.
