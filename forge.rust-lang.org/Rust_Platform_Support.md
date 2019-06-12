@@ -1,7 +1,7 @@
 * Rust compiler runs on and compiles to many platforms.
 * All platforms are not supported equally.
 * Rust's support levels are organized into three tiers - each with different set of guarantees.
-* Platforms are identifies by their "target triple" which is the string to inform the compiler what output should be produced.
+* Platforms are identified by their "target triple" which is the string to inform the compiler what output should be produced.
 # Tier 1
 * Can be thought of as "guaranteed to work".
 * Following requirements will be satisfied :
