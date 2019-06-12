@@ -29,14 +29,14 @@
 * Rust support is available in many editors.
 * `rustfmt`
 	* Code formatting tool.
-	```bash
-	$ rustup component add rustfmt
-	```
+```bash
+$ rustup component add rustfmt
+```
 * `clippy`
 	* Linting tool.
-	```bash
-	$ rustup component add clippy
-	```
+```bash
+$ rustup component add clippy
+```
 # Generating a new project
 * To create a new project
 ```bash
