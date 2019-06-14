@@ -144,8 +144,6 @@ fn main() {
 * `fmt::Debug` is not compact and clean.
 * To customize the appearance, we need to manually implement `fmt::Display`, which uses the `{}` print marker.
 ```rust
-#![allow(unused_variables)]
-fn main() {
 // Import (via `use`) the `fmt` module to make it available.
 use std::fmt;
 
