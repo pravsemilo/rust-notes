@@ -76,7 +76,30 @@ fn main() {
     println!("size of `f` in bytes: {}", std::mem::size_of_val(&f));
 }
 ```
+## Inference
+* Rust's type inference engine is smart.
+	* It looks at the type of the r-value during an initialization.
+	* It also looks at how variable is used afterwards to infer its type.
+```rust
+fn main() {
+    // Because of the annotation, the compiler knows that `elem` has type u8.
+    let elem = 5u8;
+
+    // Create an empty vector (a growable array).
+    let mut vec = Vec::new();
+    // At this point the compiler doesn't know the exact type of `vec`, it
+    // just knows that it's a vector of something (`Vec<_>`).
+
+    // Insert `elem` in the vector.
+    vec.push(elem);
+    // Aha! Now the compiler knows that `vec` is a vector of `u8`s (`Vec<u8>`)
+    // TODO ^ Try commenting out the `vec.push(elem)` line
+
+    println!("{:?}", vec);
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/types.html
 * https://doc.rust-lang.org/stable/rust-by-example/types/cast.html
 * https://doc.rust-lang.org/stable/rust-by-example/types/literals.html
+* https://doc.rust-lang.org/stable/rust-by-example/types/inference.html
