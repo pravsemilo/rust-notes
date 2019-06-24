@@ -272,6 +272,36 @@ fn main() {
     println!("{}", list.stringify());
 }
 ```
+## constants
+* Rust has two types of constants which can be declared in any scope including global.
+	* `const` : An unchangeable value.
+	* `static` : A possibly `mut`able variable with `'static` lifetime.
+		* The static lifetime is inferred and doesn't have to be specified.
+		* Accessing or modifying a mutable static variable is `unsafe`.
+* Both require explicit type annotation.
+```rust
+// Globals are declared outside all other scopes.
+static LANGUAGE: &str = "Rust";
+const THRESHOLD: i32 = 10;
+
+fn is_big(n: i32) -> bool {
+    // Access constant in some function
+    n > THRESHOLD
+}
+
+fn main() {
+    let n = 16;
+
+    // Access constant in the main thread
+    println!("This is {}", LANGUAGE);
+    println!("The threshold is {}", THRESHOLD);
+    println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
+
+    // Error! Cannot modify a `const`.
+    THRESHOLD = 5;
+    // FIXME ^ Comment out this line
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types.html
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/structs.html
@@ -279,3 +309,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/enum/enum_use.html
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/enum/c_like.html
 * https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_display/testcase_list.html
+* https://doc.rust-lang.org/stable/rust-by-example/custom_types/constants.html
