@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 ## Aliasing
-* The `type` statement ca be used to give a new name to an existing type.
+* The `type` statement can be used to give a new name to an existing type.
 	* Types must have `CamelCase` names or compiler will raise a warning.
 	* Exception to this rule are the primitive types.
 ```rust
