@@ -57,6 +57,46 @@ fn main() {
     println!("My number is {:?}", num);
 }
 ```
+## To and from Strings
+### Converting to String
+* Implement the `ToString` trait to convert a given type to a `String`.
+* Instead of doing directly, you should implement the `fmt::Display` trait.
+	* Automagically provides the `ToString`.
+	* Allows printing the type.
+```rust
+use std::fmt;
+
+struct Circle {
+    radius: i32
+}
+
+impl fmt::Display for Circle {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Circle of radius {}", self.radius)
+    }
+}
+
+fn main() {
+    let circle = Circle { radius: 6 };
+    println!("{}", circle.to_string());
+}
+```
+### Parsing a String
+* The idiomatic approach is to use the `parse` function and provide the type to the function.
+* Type can be passed in following manner :
+	* Without type inference.
+	* Using the turbofish syntax.
+* This will convert the string into the type specified as long as the `FromStr` trait is implemented for that type.
+```rust
+fn main() {
+    let parsed: i32 = "5".parse().unwrap();
+    let turbo_parsed = "10".parse::<i32>().unwrap();
+
+    let sum = parsed + turbo_parsed;
+    println!("Sum: {:?}", sum);
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/conversion.html
 * https://doc.rust-lang.org/stable/rust-by-example/conversion/from_into.html
+* https://doc.rust-lang.org/stable/rust-by-example/conversion/string.html
