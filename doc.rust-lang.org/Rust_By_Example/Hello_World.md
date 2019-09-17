@@ -15,6 +15,7 @@ $ ./hello
 ```rust
 // Single line comments
 /* Block comments */
+/* Nested /* block /* comments */ */ */
 ```
 * *Doc Comments*
 ```rust
