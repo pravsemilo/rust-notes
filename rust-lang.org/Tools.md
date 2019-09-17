@@ -18,8 +18,8 @@ $ cargo build
 # Velocity through automation
 ## `Rustfmt`
 * Formats Rust code.
-## Clippy
-## Cargo Doc
+## `Clippy`
+## `Cargo Doc`
 ```bash
 $ cargo doc
 ```
