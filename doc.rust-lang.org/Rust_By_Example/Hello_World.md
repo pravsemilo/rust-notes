@@ -4,7 +4,7 @@ fn main() {
 	println!("Hello World!");
 }
 ```
-* `println!` is a macro that prints text to the console.
+* `println!` is a [macro](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/macro_rules.md)  that prints text to the console.
 * A binary can generated using Rust compiler `rustc`. It will produce a `hello` binary that can be executed.
 ```bash
 $ rustc hello.rs
