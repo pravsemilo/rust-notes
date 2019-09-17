@@ -17,9 +17,9 @@
 * On Windows, download and run `rustup-init.exe`.
 * `rustup-init` can be configured interactively and all options can additionally be controlled by command line arguments.
 # Standalone Installer
-* Contain a single release of Rust.
+* Contains a single release of Rust.
 * Suitable for offline installation.
 * Installs `rustc`, `cargo` `rustdoc`, standard library and standard documentation.
-* Do not provide access to cross-compilation targets like `rustup` does.
+* Does not provide access to cross-compilation targets like `rustup` does.
 # References
 * https://forge.rust-lang.org/other-installation-methods.html
