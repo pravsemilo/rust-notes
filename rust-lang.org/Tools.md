@@ -16,7 +16,7 @@ $ cargo test
 $ cargo build 
 ```
 # Velocity through automation
-## `Rustfmt`
+## [`Rustfmt`](https://github.com/rust-lang/rustfmt)
 * Formats Rust code.
 ## `Clippy`
 ## `Cargo Doc`
