@@ -77,7 +77,7 @@ fn main() {
 * [std::fmt](https://doc.rust-lang.org/std/fmt/) contains many [traits](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Traits.md) which govern the display of text. For example :
 	* `fmt::Debug` : Uses the `{:?}` marker. Formats text for debugging purposes.
 	* `fmt::Display` : Uses the `{}` marker. Formats text in a more elegant, user friendly fashion.
-* Implementing the `fmt::Display` trait automagically implements the `ToString` trait which allows us to convert the type to `String`.
+* Implementing the `fmt::Display` trait automatically implements the `ToString` trait which allows us to convert the type to `String`.
 ### Debug
 * All types which want to use `std::fmt` formatting `traits` require an implementation to be printable.
 * Automatic implementations are only provided for types such as in the `std` library.
