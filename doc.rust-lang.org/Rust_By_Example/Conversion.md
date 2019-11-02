@@ -89,6 +89,8 @@
 		* Without type inference.
 		* Using the turbofish syntax.
 	* This will convert the string into the type specified as long as the [FromStr](https://doc.rust-lang.org/std/str/trait.FromStr.html) trait is implemented for that type.
+		* This is implemented for the types within the standard library.
+		* For user defined types implement the [FromStr](https://doc.rust-lang.org/std/str/trait.FromStr.html) trait for that type.
 	```rust
 	fn main() {
 	    let parsed: i32 = "5".parse().unwrap();
