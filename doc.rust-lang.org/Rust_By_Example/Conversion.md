@@ -1,6 +1,6 @@
 # Conversion
-* Rust addresses conversion between types by use of `traits`.
-* Generic conversions will use the `From` and `Into` traits.
+* Rust addresses conversion between types by use of [traits](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Traits.md).
+* Generic conversions will use the [From](https://doc.rust-lang.org/std/convert/trait.From.html) and [Into](https://doc.rust-lang.org/std/convert/trait.Into.html) traits.
 * However there are more specific ones for the more common cases, in particular when converting to and from `String`.
 ## `From` and `Into`
 * `From` and `Into` traits are inherently linked.
