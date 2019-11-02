@@ -59,7 +59,7 @@ fn main() {
 }
 ```
 ## Literals
-* Numeric literals can be type annotated by adding the type as a suffix.
+* Numeric literals can be type annotated by adding the type as a suffix. For example, to specify that `42` should have the type `i32`, write `42i32`.
 * Type of unsuffixed numeric literals will depend on how they are used.
 	* If no constraints exists, the compiler will use `i32` for integers and `f64` for floating point numbers.
 ```rust
