@@ -81,6 +81,7 @@ fn main() {
 ```
 ## Declare First
 * It's possible to declare variable bindings first and initialize them later.
+* However this is not used much as it leads to the use of uninitialized variables.
 ```rust
 fn main() {
     // Declare a variable binding
@@ -106,8 +107,7 @@ fn main() {
     println!("another binding: {}", another_binding);
 }
 ```
-* However this is not used much as it leads to the use of uninitialized variables.
-* Compiler forbids the use of uninitialized variables.
+* Compiler forbids use of uninitialized variables, as this would lead to undefined behavior.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/variable_bindings.html
 * https://doc.rust-lang.org/stable/rust-by-example/variable_bindings/mut.html
