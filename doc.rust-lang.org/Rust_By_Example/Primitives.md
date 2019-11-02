@@ -59,6 +59,7 @@ fn main() {
 	* Examples :
 		* `1_000` is same as `1000`.
 		* `0.000_001` is same as `0.000001`.
+* The operators available and their precedence [in Rust](https://doc.rust-lang.org/reference/expressions.html#expression-precedence) are similar to other C-like languages.
 ```rust
 fn main() {
     // Integer addition
