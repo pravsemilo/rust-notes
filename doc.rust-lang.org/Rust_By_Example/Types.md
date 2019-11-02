@@ -1,4 +1,9 @@
 # Types
+* Rust provides several mechanisms to change or define the type of primitive and user defined types like :
+	* [Casting](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Types.md#casting) between primitive types.
+	* Specifying the desired types of [literals](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Types.md#literals).
+	* Using [type inference](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Types.md#inference).
+	* [Aliasing](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Types.md#aliasing) types.
 ## Casting
 * Rust provides no implicit type conversion (coercion) between primitive types.
 * Explicity type conversion (casting) can be performed using the `as` keyword.
