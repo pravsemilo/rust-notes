@@ -5,7 +5,7 @@
 * Can power performance critical services and also run on embedded devices.
 * Easily intergate with other languages.
 ## Reliability
-* Rich type system and ownership model guarantee memory saftery and thread safety.
+* Rich type system and ownership model guarantee memory safety and thread safety.
 * Helps to eliminate many classes of bugs at compile time.
 ## Productivity
 * Great documentation.
