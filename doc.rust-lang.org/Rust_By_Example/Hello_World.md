@@ -24,7 +24,7 @@ $ ./hello
 ```
 ## Formatted print
 * Printing is handled by a series of [macros](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/macro_rules.md) defined in [std::fmt](https://doc.rust-lang.org/std/fmt/) :
-	* `format!` : Write formatted text to [String](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Std_library_types.md).
+	* `format!` : Write formatted text to [String](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Std_library_types.md#strings).
 	* `print!` : Same as `format!` but text is printed to the console (io::stdout).
 	* `println!` : Same as `print!` but a new line is appended.
 	* `eprint!` : Same as `format!` but text is printed to the standard error (io::stderr).
