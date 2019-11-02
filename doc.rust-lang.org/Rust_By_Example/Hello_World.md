@@ -143,7 +143,7 @@ fn main() {
 * One can manually implement `fmt::Display` to control the display.
 ### Display
 * `fmt::Debug` is not compact and clean.
-* To customize the appearance, we need to manually implement `fmt::Display`, which uses the `{}` print marker.
+* To customize the appearance, we need to manually implement [fmt::Display](https://doc.rust-lang.org/std/fmt/), which uses the `{}` print marker.
 ```rust
 // Import (via `use`) the `fmt` module to make it available.
 use std::fmt;
