@@ -2,7 +2,7 @@
 * Custom data types are formed mainly through two keywords :
 	* `struct` : Define a strcuture.
 	* `enum` : Define an eumeration.
-* Constants can also be created via the `const` and `static` keywords.
+* Constants can also be created via the `const` and `[static](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Scoping_rules.md#static)` keywords.
 ## Structures
 * Three types of structures ("structs") can be created using the `struct` keyword :
 	* Tuple structs, which are basically, named tuples.
