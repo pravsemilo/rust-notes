@@ -83,7 +83,7 @@ fn main() {
 ```
 ## Inference
 * Rust's type inference engine is smart.
-	* It looks at the type of the r-value during an initialization.
+	* It does more than looking at the type of the value expression during an initialization.
 	* It also looks at how variable is used afterwards to infer its type.
 ```rust
 fn main() {
