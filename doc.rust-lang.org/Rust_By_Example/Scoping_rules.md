@@ -1,21 +1,22 @@
-# RAII
-# Ownership and moves
-## Mutability
-# Borrowing
-## Mutability
-## Freezing
-## Aliasing
-## The ref pattern
-# Lifetimes
-## Explicit annotation
-## Functions
-## Methods
-## Structs
-## Traits
-## Bounds
-## Coercion
-## Static
-## Elision
+# Scoping rules
+## RAII
+## Ownership and moves
+### Mutability
+## Borrowing
+### Mutability
+### Freezing
+### Aliasing
+### The ref pattern
+## Lifetimes
+### Explicit annotation
+### Functions
+### Methods
+### Structs
+### Traits
+### Bounds
+### Coercion
+### Static
+### Elision
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/scope.html
 * https://doc.rust-lang.org/stable/rust-by-example/scope/raii.html
