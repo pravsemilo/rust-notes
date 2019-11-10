@@ -341,5 +341,5 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/enum.html
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/enum/enum_use.html
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/enum/c_like.html
-* https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_display/testcase_list.html
+* https://doc.rust-lang.org/stable/rust-by-example/custom_types/enum/testcase_linked_list.html
 * https://doc.rust-lang.org/stable/rust-by-example/custom_types/constants.html
