@@ -132,6 +132,39 @@ fn main() {
     inspect(unload);
 }
 ```
+* __Types aliases__
+* Using type alias, you can refer to each enum variant via its alias.
+```rust
+enum VeryVerboseEnumOfThingsToDoWithNumbers {
+    Add,
+    Subtract,
+}
+
+// Creates a type alias
+type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
+
+fn main() {
+    // We can refer to each variant via its alias, not its long and inconvenient
+    // name.
+    let x = Operations::Add;
+}
+```
+* The most common place you will see this is in `impl` blocks using the `Self` alias.
+```rust
+enum VeryVerboseEnumOfThingsToDoWithNumbers {
+    Add,
+    Subtract,
+}
+
+impl VeryVerboseEnumOfThingsToDoWithNumbers {
+    fn run(&self, x: i32, y: i32) -> i32 {
+        match self {
+            Self::Add => x + y,
+            Self::Subtract => x - y,
+        }
+    }
+}
+```
 ### use
 * The use declaration can be used so manual scoping isn't needed.
 ```rust
