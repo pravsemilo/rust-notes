@@ -308,7 +308,7 @@ fn main() {
 ## constants
 * Rust has two types of constants which can be declared in any scope including global.
 	* `const` : An unchangeable value.
-	* `static` : A possibly `mut`able variable with `[static](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Scoping_rules.md#static)` lifetime.
+	* `static` : A possibly `mut`able variable with [`static`](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Scoping_rules.md#static) lifetime.
 		* The static lifetime is inferred and doesn't have to be specified.
 		* Accessing or modifying a mutable static variable is `unsafe`.
 * Both require explicit type annotation.
