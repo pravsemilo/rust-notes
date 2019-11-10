@@ -9,7 +9,7 @@
 	* `bool` : Either `true` or `false`.
 	* Unit Type `()`
 		* Only possible value is an empty tuple `()`.
-		* Despite the value of a unitype being a tuple, it is not considered a compound type because it does not contain multiple values.
+		* Despite the value of a unit type being a tuple, it is not considered a compound type because it does not contain multiple values.
 * __Compound Types__
 	* Arrays like `[1, 2, 3]`.
 	* Tuples like `(1, true)`.
