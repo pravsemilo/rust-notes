@@ -15,25 +15,25 @@
 		let my_string = String::from(my_str);
 		```
 	* We can also define  a conversion for our own type.
-		```rust
-		use std::convert::From;
+	```rust
+	use std::convert::From;
 
-		#[derive(Debug)]
-		struct Number {
-		    value: i32,
-		}
+	#[derive(Debug)]
+	struct Number {
+	    value: i32,
+	}
 
-		impl From<i32> for Number {
-		    fn from(item: i32) -> Self {
-			Number { value: item }
-		    }
-		}
+	impl From<i32> for Number {
+	    fn from(item: i32) -> Self {
+		Number { value: item }
+	    }
+	}
 
-		fn main() {
-		    let num = Number::from(30);
-		    println!("My number is {:?}", num);
-		}
-		```
+	fn main() {
+	    let num = Number::from(30);
+	    println!("My number is {:?}", num);
+	}
+	```
 * __[Into](https://doc.rust-lang.org/std/convert/trait.Into.html)__
 	* Reciprocal of the `From` trait.
 	* If you have implemented the `From` trait for your type, you get the `Into` implementation for free.
