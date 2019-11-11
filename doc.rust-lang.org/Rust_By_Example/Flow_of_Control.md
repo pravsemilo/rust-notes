@@ -1,5 +1,5 @@
 # Flow of Control
-## if/else
+## if / else
 * Boolean condition doesn't need to be surrounded by parentheses.
 * Each condition is followed by a block.
 * `if-else` conditionals are expressions and all branches must return the same type.
