@@ -59,6 +59,42 @@
 	    println!("My number is {:?}", num);
 	}
 	```
+## TryFrom and TryInto
+* Similar to [`From and Into`](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Conversion.md#from-and-into), [`TryFrom`](https://doc.rust-lang.org/std/convert/trait.TryFrom.html) and [`TryxpInto`](https://doc.rust-lang.org/std/convert/trait.TryInto.html) are generic traits for converting between types.
+* Unlike `From`/`Into`, the `TryFrom`/`TryInto` traits are used for fallible conversions and return [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)s.
+```rust
+use std::convert::TryFrom;
+use std::convert::TryInto;
+
+#[derive(Debug, PartialEq)]
+struct EvenNumber(i32);
+
+impl TryFrom<i32> for EvenNumber {
+    type Error = ();
+
+    fn try_from(value: i32) -> Result<Self, Self::Error> {
+        if value % 2 == 0 {
+            Ok(EvenNumber(value))
+        } else {
+            Err(())
+        }
+    }
+}
+
+fn main() {
+    // TryFrom
+
+    assert_eq!(EvenNumber::try_from(8), Ok(EvenNumber(8)));
+    assert_eq!(EvenNumber::try_from(5), Err(()));
+
+    // TryInto
+
+    let result: Result<EvenNumber, ()> = 8i32.try_into();
+    assert_eq!(result, Ok(EvenNumber(8)));
+    let result: Result<EvenNumber, ()> = 5i32.try_into();
+    assert_eq!(result, Err(()));
+}
+```
 ## To and from Strings
 * __Converting to String__
 	* Implement the [ToString](https://doc.rust-lang.org/std/string/trait.ToString.html) trait to convert a given type to a `String`.
@@ -103,4 +139,5 @@
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/conversion.html
 * https://doc.rust-lang.org/stable/rust-by-example/conversion/from_into.html
+* https://doc.rust-lang.org/stable/rust-by-example/conversion/try_from_try_into.html
 * https://doc.rust-lang.org/stable/rust-by-example/conversion/string.html
