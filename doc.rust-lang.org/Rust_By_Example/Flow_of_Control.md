@@ -237,6 +237,23 @@ fn main() {
 	* [Desctructuring Enums]()
 	* [Destructuring Pointers]()
 	* [Destructuing Structures]()
+#### tuples
+```rust
+fn main() {
+    let pair = (0, -2);
+    // TODO ^ Try different values for `pair`
+
+    println!("Tell me about {:?}", pair);
+    // Match can be used to destructure a tuple
+    match pair {
+        // Destructure the second
+        (0, y) => println!("First is `0` and `y` is `{:?}`", y),
+        (x, 0) => println!("`x` is `{:?}` and last is `0`", x),
+        _      => println!("It doesn't matter what they are"),
+        // `_` means don't bind the value to a variable
+    }
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_else.html
@@ -247,3 +264,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/for.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/match.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/match/destructuring.html
+* https://doc.rust-lang.org/stable/rust-by-example/flow_control/match/destructuring/destructure_tuple.html
