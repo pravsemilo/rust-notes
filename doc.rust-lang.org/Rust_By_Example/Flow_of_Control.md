@@ -231,6 +231,12 @@ fn main() {
     println!("{} -> {}", boolean, binary);
 }
 ```
+### Destructuring
+* A `match` block can destructure items in following ways :
+	* [Destructuring Tuples]()
+	* [Desctructuring Enums]()
+	* [Destructuring Pointers]()
+	* [Destructuing Structures]()
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_else.html
@@ -240,3 +246,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/while.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/for.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/match.html
+* https://doc.rust-lang.org/stable/rust-by-example/flow_control/match/destructuring.html
