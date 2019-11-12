@@ -108,9 +108,33 @@ fn main() {
     assert_eq!(result, 20);
 }
 ```
+## while
+```rust
+fn main() {
+    // A counter variable
+    let mut n = 1;
+
+    // Loop while `n` is less than 101
+    while n < 101 {
+        if n % 15 == 0 {
+            println!("fizzbuzz");
+        } else if n % 3 == 0 {
+            println!("fizz");
+        } else if n % 5 == 0 {
+            println!("buzz");
+        } else {
+            println!("{}", n);
+        }
+
+        // Increment counter
+        n += 1;
+    }
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_else.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/loop.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/loop/nested.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/loop/return.html
+* https://doc.rust-lang.org/stable/rust-by-example/flow_control/while.html
