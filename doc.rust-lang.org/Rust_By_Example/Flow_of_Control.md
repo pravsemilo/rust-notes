@@ -91,8 +91,26 @@ fn main() {
     println!("Exited the outer loop");
 }
 ```
+### Returning from loops
+* To return a value, you need to put the return value after the `break`. and it will be returned by the `loop` expression.
+```rust
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    assert_eq!(result, 20);
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_else.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/loop.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/loop/nested.html
+* https://doc.rust-lang.org/stable/rust-by-example/flow_control/loop/return.html
