@@ -233,10 +233,10 @@ fn main() {
 ```
 ### Destructuring
 * A `match` block can destructure items in following ways :
-	* [Destructuring Tuples]()
-	* [Desctructuring Enums]()
-	* [Destructuring Pointers]()
-	* [Destructuing Structures]()
+	* [Destructuring Tuples](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Flow_of_Control.md#tuples)
+	* [Desctructuring Enums](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Flow_of_Control.md#enums)
+	* [Destructuring Pointers](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Flow_of_Control.md#pointers--ref)
+	* [Destructuing Structures](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Flow_of_Control.md#structs)
 #### tuples
 ```rust
 fn main() {
