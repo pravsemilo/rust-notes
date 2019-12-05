@@ -1,5 +1,5 @@
 # Which installer should you use?
-* Why might one not want to install using `[rustup](https://github.com/rust-lang/rustup.rs)`?
+* Why might one not want to install using [`rustup`](https://github.com/rust-lang/rustup.rs)?
 	* Offline Installation : `rustup` downloads components from the internet on demand.
 	* Preference for the system pacakge manager.
 	* Preference against `curl | sh`.
