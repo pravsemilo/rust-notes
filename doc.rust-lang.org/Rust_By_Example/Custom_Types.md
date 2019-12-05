@@ -132,7 +132,7 @@ fn main() {
     inspect(unload);
 }
 ```
-* __Types aliases__
+* __Type aliases__
 	* Using type alias, you can refer to each enum variant via its alias.
 	```rust
 	enum VeryVerboseEnumOfThingsToDoWithNumbers {
