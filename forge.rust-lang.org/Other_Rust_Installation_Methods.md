@@ -2,7 +2,7 @@
 * Why might one not want to install using `rustup`?
 	* Offline Installation : `rustup` downloads components from the internet on demand.
 	* Preference for the system pacakge manager.
-	* Preference againt `curl | sh`.
+	* Preference against `curl | sh`.
 	* Validating Signatures
 	* GUI Installation
 * Rust's platform support is defined in [three tiers](https://github.com/pravsemilo/rust-notes/blob/master/forge.rust-lang.org/Rust_Platform_Support.md), which correspond closely with the installation methods available.
