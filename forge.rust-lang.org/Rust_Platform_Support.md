@@ -23,4 +23,4 @@
 * Rust codebase has support but builds and tests are not automated and may not work.
 * Official builds are not available.
 # References
-* https://forge.rust-lang.org/platform-support.html
+* https://forge.rust-lang.org/release/platform-support.html

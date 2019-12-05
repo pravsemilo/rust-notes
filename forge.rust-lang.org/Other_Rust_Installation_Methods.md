@@ -22,4 +22,4 @@
 * Installs `rustc`, `cargo` `rustdoc`, standard library and standard documentation.
 * Does not provide access to cross-compilation targets like `rustup` does.
 # References
-* https://forge.rust-lang.org/other-installation-methods.html
+* https://forge.rust-lang.org/infra/other-installation-methods.html
