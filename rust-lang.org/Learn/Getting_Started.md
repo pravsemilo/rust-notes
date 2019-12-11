@@ -1,8 +1,9 @@
-# Installing Rust
+# Getting started
+## Installing Rust
 * You can try Rust online in the [Rust Playground](https://play.rust-lang.org/).
-## Rustup
+### Rustup
 * Rust installer and version management tool.
-## Cargo
+### Cargo
 * Rust build tool and package manager.
 * Cargo does lots of things :
 	* Builds your project.
@@ -25,7 +26,7 @@
 	```bash
 	$ cargo pubish
 	```
-## Other Tools
+### Other Tools
 * Rust support is available in many editors.
 * `rustfmt`
 	* Code formatting tool.
@@ -37,7 +38,7 @@ $ rustup component add rustfmt
 ```bash
 $ rustup component add clippy
 ```
-# Generating a new project
+## Generating a new project
 * To create a new project
 ```bash
 $ cargo new hello-rust
@@ -55,7 +56,7 @@ $ cargo new hello-rust
 ```bash
 $ cargo run
 ```
-# Adding dependencies
+## Adding dependencies
 * [crates.io](https://crates.io/) is the package registry for Rust.
 * In Rust, we refer to packages as `crates`.
 * To add a dependency, edit your `Cargo.toml`
@@ -73,7 +74,7 @@ $ cargo build
 ```rust
 use ferris_says::say
 ```
-# A small Rust application
+## A small Rust application
 * Edit `main.rs` :
 ```rust
 use ferris_says::say; // from the previous step

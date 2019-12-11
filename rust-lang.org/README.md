@@ -1,13 +1,14 @@
+# Rust
 * Rust is a language empowering everyone to build reliable and efficient software.
-# Why Rust?
-## Performance
+## Why Rust?
+### Performance
 * Fast & Memory Efficient : No runtime or garbage collector.
 * Can power performance critical services and also run on embedded devices.
 * Easily intergate with other languages.
-## Reliability
+### Reliability
 * Rich type system and ownership model guarantee memory safety and thread safety.
 * Helps to eliminate many classes of bugs at compile time.
-## Productivity
+### Productivity
 * Great documentation.
 * Friendly compiler with useful error messages.
 * Top Notch Tooling

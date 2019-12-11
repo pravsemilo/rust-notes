@@ -1,4 +1,5 @@
-# Which installer should you use?
+# Other  Rust Installation Methods
+## Which installer should you use?
 * Why might one not want to install using [`rustup`](https://github.com/rust-lang/rustup.rs)?
 	* Offline Installation : `rustup` downloads components from the internet on demand.
 	* Preference for the system pacakge manager.
@@ -12,7 +13,7 @@
 		* Rust code can run on those platforms.
 		* Compiler cannot run on those platforms.
 		* Support for such platforms can be installed with `rustup target add`.
-# Other ways to install  [`rustup`](https://github.com/rust-lang/rustup.rs)
+## Other ways to install  [`rustup`](https://github.com/rust-lang/rustup.rs)
 * On Unix, run `curl https://sh.rustup.rs -sSf | sh`. This downloads and runs [`rustup-init.sh`](https://static.rust-lang.org/rustup/rustup-init.sh).
 * On Windows, download and run [`rustup-init.exe`](https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe).
 * `rustup-init` can be configured interactively and all options can additionally be controlled by command line arguments.
@@ -20,7 +21,7 @@
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- --help
 ```
-# Standalone Installer
+## Standalone Installer
 * Contains a single release of Rust.
 * Suitable for offline installation.
 * Installs `rustc`, `cargo` `rustdoc`, standard library and standard documentation.
