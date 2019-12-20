@@ -43,7 +43,7 @@ $ rustup component add clippy
 ```bash
 $ cargo new hello-rust
 ```
-* This will create a new directory called `hello-rust` with the following diretory structure.
+* This will create a new directory called `hello-rust` with the following directory structure.
 	* `Cargo.toml` - Mainfest file for Rust. It's where you keep metadata for your project and its dependencies.
 	* `src/main.rs` - Contains application code.
 	```
