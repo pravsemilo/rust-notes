@@ -298,7 +298,7 @@ fn main() {
 }
 ```
 #### pointers / ref
-* For pointers, destructurting and dereferencing, are different in Rust and C.
+* For pointers, destructuring and dereferencing, are different in Rust and C.
 	* Dereferencing uses `*`.
 	* Destructuring uses `&`, `ref` and `ref mut`.
 ```rust
