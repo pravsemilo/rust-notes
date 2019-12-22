@@ -396,7 +396,7 @@ fn main() {
 }
 ```
 ### Binding
-* Indirectly accessing a variable makes it impossible to branch and use that variable without rebinding,
+* Indirectly accessing a variable makes it impossible to branch and use that variable without rebinding.
 * `match` provides the `@` sigil for binding values to names.
 ```rust
 // A function `age` which returns a `u32`.
