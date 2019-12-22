@@ -279,8 +279,8 @@ fn main() {
     println!("What color is it?");
     // An `enum` can be destructured using a `match`.
     match color {
-        Color::Red   => println!("The color is Red!"),
-        Color::Blue  => println!("The color is Blue!"),
+        Color::Red => println!("The color is Red!"),
+        Color::Blue => println!("The color is Blue!"),
         Color::Green => println!("The color is Green!"),
         Color::RGB(r, g, b) =>
             println!("Red: {}, green: {}, and blue: {}!", r, g, b),
@@ -365,7 +365,7 @@ fn main() {
     let foo = Foo { x: (1, 2), y: 3 };
 
     match foo {
-        Foo { x: (1, b), y } => println!("First of x is 1, b = {},  y = {} ", b, y),
+        Foo { x: (1, b), y } => println!("First of x is 1, b = {}, y = {} ", b, y),
 
         // you can destructure structs and rename the variables,
         // the order is not important
@@ -530,7 +530,7 @@ fn main() {
 }
 ```
 * `if let` allows to match enum non-parameterized variants, even if the enum doesn't `#[derive(PartialEq)]`, neither we implement `PartialEq` for it.
-	* In such case, classic `if Foo::Bar==a`  fails, because instances  of such enum are not comparable  for equality.
+	* In such case, classic `if Foo::Bar==a` fails, because instances of such enum are not comparable for equality.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_else.html
