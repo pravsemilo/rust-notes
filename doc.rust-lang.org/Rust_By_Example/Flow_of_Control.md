@@ -437,7 +437,7 @@ fn main() {
     }
 }
 ```
-# if let
+## if let
 * For some use cases, when matching enums, `match` is awkward.
 ```rust
 // Make `optional` of type `Option<i32>`
@@ -531,8 +531,8 @@ fn main() {
 ```
 * `if let` allows to match enum non-parameterized variants, even if the enum doesn't `#[derive(PartialEq)]`, neither we implement `PartialEq` for it.
 	* In such case, classic `if Foo::Bar==a` fails, because instances of such enum are not comparable for equality.
-#  while let
-* Similar to `if let`, `while let`  can make awkward `match` sequences more tolerable.
+## while let
+* Similar to `if let`, `while let` can make awkward `match` sequences more tolerable.
 ```rust
 // Make `optional` of type `Option<i32>`
 let mut optional = Some(0);
