@@ -10,7 +10,7 @@
 1. [Conversion](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Conversion.md)
 1. [Expressions](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Expressions.md)
 1. [Flow of Control](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Flow_of_Control.md)
-1. [Functions]()
+1. [Functions](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Functions.md)
 1. [Modules]()
 1. [Crates]()
 1. [Cargo]()
