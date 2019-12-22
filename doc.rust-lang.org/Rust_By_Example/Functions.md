@@ -156,6 +156,47 @@ fn main() {
     // TODO ^ Try uncommenting this line
 }
 ```
+## Closures
+* Closures are functions that can capture the enclosing environment.
+* Closure are also called lambda expressions or lambdas.
+* For example, a closure that captures the x variable.
+```rust
+|val| val + x
+```
+* The syntax and capabilities of closures make them very convenient for on the fly usage.
+	* Calling the closure is exactly like calling a function.
+	* Both input and return types _can_ be inferred
+	* Input variable names _must_ be specified.
+* Other characterstics of closures include :
+	* Using `||` instead of `()` around input variables.
+	* Optional body delimitation (`{}`) for a single expression (mandatory otherwise).
+	* The ability to capture the outer environment variables.
+```rust
+fn main() {
+    // Increment via closures and functions.
+    fn  function            (i: i32) -> i32 { i + 1 }
+
+    // Closures are anonymous, here we are binding them to references
+    // Annotation is identical to function annotation but is optional
+    // as are the `{}` wrapping the body. These nameless functions
+    // are assigned to appropriately named variables.
+    let closure_annotated = |i: i32| -> i32 { i + 1 };
+    let closure_inferred  = |i     |          i + 1  ;
+
+    let i = 1;
+    // Call the function and closures.
+    println!("function: {}", function(i));
+    println!("closure_annotated: {}", closure_annotated(i));
+    println!("closure_inferred: {}", closure_inferred(i));
+
+    // A closure taking no arguments which returns an `i32`.
+    // The return type is inferred.
+    let one = || 1;
+    println!("closure returning one: {}", one());
+
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/fn.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/methods.html
+* https://doc.rust-lang.org/stable/rust-by-example/fn/closures.html
