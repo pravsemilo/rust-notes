@@ -531,6 +531,54 @@ fn main() {
 ```
 * `if let` allows to match enum non-parameterized variants, even if the enum doesn't `#[derive(PartialEq)]`, neither we implement `PartialEq` for it.
 	* In such case, classic `if Foo::Bar==a` fails, because instances of such enum are not comparable for equality.
+#  while let
+* Similar to `if let`, `while let`  can make awkward `match` sequences more tolerable.
+```rust
+// Make `optional` of type `Option<i32>`
+let mut optional = Some(0);
+
+// Repeatedly try this test.
+loop {
+    match optional {
+        // If `optional` destructures, evaluate the block.
+        Some(i) => {
+            if i > 9 {
+                println!("Greater than 9, quit!");
+                optional = None;
+            } else {
+                println!("`i` is `{:?}`. Try again.", i);
+                optional = Some(i + 1);
+            }
+            // ^ Requires 3 indentations!
+        },
+        // Quit the loop when the destructure fails:
+        _ => { break; }
+        // ^ Why should this be required? There must be a better way!
+    }
+}
+```
+```rust
+fn main() {
+    // Make `optional` of type `Option<i32>`
+    let mut optional = Some(0);
+
+    // This reads: "while `let` destructures `optional` into
+    // `Some(i)`, evaluate the block (`{}`). Else `break`.
+    while let Some(i) = optional {
+        if i > 9 {
+            println!("Greater than 9, quit!");
+            optional = None;
+        } else {
+            println!("`i` is `{:?}`. Try again.", i);
+            optional = Some(i + 1);
+        }
+        // ^ Less rightward drift and doesn't require
+        // explicitly handling the failing case.
+    }
+    // ^ `if let` had additional optional `else`/`else if`
+    // clauses. `while let` does not have these.
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_else.html
@@ -548,3 +596,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/match/guard.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/match/binding.html
 * https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_let.html
+* https://doc.rust-lang.org/stable/rust-by-example/flow_control/while_let.html
