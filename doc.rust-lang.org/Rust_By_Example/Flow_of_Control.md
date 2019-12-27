@@ -154,7 +154,7 @@ fn main() {
 * Use `a..=b` for a range that is inclusive on both ends.
 ### for and iterators
 * As discussed in the [Iterator](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Traits.md#iterators) trait, if not specified, the `for` loop will apply the `into_iter` function on the provided collection, to convert the collection into an iterator.
-* This is not the only way to covert a collection into an iterator. The other functions are `iter` and `iter_mut`.
+* This is not the only way to convert a collection into an iterator. The other functions are `iter` and `iter_mut`.
 	* `iter`
 		* Borrows each element from the collection through each iteration.
 		* Collection is not modified and can be used after the loop.
