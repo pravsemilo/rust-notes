@@ -531,6 +531,21 @@ fn main() {
 ```
 * `if let` allows to match enum non-parameterized variants, even if the enum doesn't `#[derive(PartialEq)]`, neither we implement `PartialEq` for it.
 	* In such case, classic `if Foo::Bar==a` fails, because instances of such enum are not comparable for equality.
+```rust
+// This enum purposely doesn't #[derive(PartialEq)],
+// neither we implement PartialEq for it. That's why comparing Foo::Bar==a fails below.
+enum Foo {Bar}
+
+fn main() {
+    let a = Foo::Bar;
+
+    // Variable a matches Foo::Bar
+    if Foo::Bar == a {
+    // ^-- this causes a compile-time error. Use `if let` instead.
+        println!("a is foobar");
+    }
+}
+```
 ## while let
 * Similar to `if let`, `while let` can make awkward `match` sequences more tolerable.
 ```rust
