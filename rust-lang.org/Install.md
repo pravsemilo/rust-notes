@@ -19,6 +19,6 @@ $ rustup update
 * All tools are installed to the `~/.cargo/bin` directory. This is where you will find the Rust toolchain, including `rustc`, `cargo` and `rustup`.
 * Need to have `~/.cargo/bin` in `PATH`.
 ## Other installation methods
-* The installation described above, via `rustup` is the preferred way to install Rust. Howover Rust can be installed via other methods as well. See [here](https://github.com/pravsemilo/rust-notes/blob/master/forge.rust-lang.org/Other_Rust_Installation_Methods.md) .
+* The installation described above, via `rustup` is the preferred way to install Rust. However Rust can be installed via other methods as well. See [here](https://github.com/pravsemilo/rust-notes/blob/master/forge.rust-lang.org/Other_Rust_Installation_Methods.md) .
 # References
 * https://www.rust-lang.org/tools/install
