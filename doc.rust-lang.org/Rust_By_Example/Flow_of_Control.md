@@ -541,7 +541,8 @@ fn main() {
 
     // Variable a matches Foo::Bar
     if Foo::Bar == a {
-    // ^-- this causes a compile-time error. Use `if let` instead.
+    // ^-- this causes a compile-time error. Use `if let` instead as below.
+    // if let Foo::Bar = a {
         println!("a is foobar");
     }
 }
