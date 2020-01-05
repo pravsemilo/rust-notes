@@ -197,8 +197,7 @@ fn main() {
 }
 ```
 ### Capturing
-* Closures are inherenlty flexible and will do what the functionality requires to make the closure work without annotation.
-* This allows capturing to flexibly adapt to the use case, sometimes moving and sometimes borrowing.
+* Closure allows capturing to flexibly adapt to the use case, sometimes moving and sometimes borrowing.
 * Closures can capture variables :
 	* By reference `&T`.
 	* By mutable reference `&mut T`.
