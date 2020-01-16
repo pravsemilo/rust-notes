@@ -383,6 +383,43 @@ fn main() {
 }
 ```
 * The `Fn`, `FnMut` and `FnOnce` traits also dictate how a closure captures variables from the enclosing scope.
+### As output parameters
+* Since anonymous clousre types are unknown, we have to use `impl <<Trait>>` to return them.
+* Valid traits for returning a closure are :
+	* `Fn`
+	* `FnMut`
+	* `FnOnce`
+* Also the `move` keyword must be used, which signals that all captures occur by value.
+* This is because any captures by reference would be dropped as soon as the function exited, leaving invalid references in the closure.
+```rust
+fn create_fn() -> impl Fn() {
+    let text = "Fn".to_owned();
+
+    move || println!("This is a: {}", text)
+}
+
+fn create_fnmut() -> impl FnMut() {
+    let text = "FnMut".to_owned();
+
+    move || println!("This is a: {}", text)
+}
+
+fn create_fnonce() -> impl FnOnce() {
+    let text = "FnOnce".to_owned();
+
+    move || println!("This is a: {}", text)
+}
+
+fn main() {
+    let fn_plain = create_fn();
+    let mut fn_mut = create_fnmut();
+    let fn_once = create_fnonce();
+
+    fn_plain();
+    fn_mut();
+    fn_once();
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/fn.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/methods.html
@@ -391,3 +428,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/input_parameters.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/anonymity.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/input_functions.html
+* https://doc.rust-lang.org/stable/rust-by-example/fn/closures/output_parameters.html
