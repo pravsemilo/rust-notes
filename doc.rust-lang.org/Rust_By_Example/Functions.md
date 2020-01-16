@@ -363,7 +363,8 @@ fn main() {
 * However bounding by one of the traits : `Fn`, `FnMut` or `FnOnce` is sufficient.
 ### Input functions
 * If a function takes a closure as inout parameter, then any function that satisfies the trait bound can be passed as a parameter.
-```rust// Define a function which takes a generic `F` argument
+```rust
+// Define a function which takes a generic `F` argument
 // bounded by `Fn`, and calls it
 fn call_me<F: Fn()>(f: F) {
     f();
