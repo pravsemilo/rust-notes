@@ -361,6 +361,28 @@ fn main() {
 * Since this new type is of unknown type, any usage in a function will require generics.
 * In this case an unbounded type parameter woule be ambiguous.
 * However bounding by one of the traits : `Fn`, `FnMut` or `FnOnce` is sufficient.
+### Input functions
+* If a function takes a closure as inout parameter, then any function that satisfies the trait bound can be passed as a parameter.
+```rust// Define a function which takes a generic `F` argument
+// bounded by `Fn`, and calls it
+fn call_me<F: Fn()>(f: F) {
+    f();
+}
+
+// Define a wrapper function satisfying the `Fn` bound
+fn function() {
+    println!("I'm a function!");
+}
+
+fn main() {
+    // Define a closure satisfying the `Fn` bound
+    let closure = || println!("I'm a closure!");
+
+    call_me(closure);
+    call_me(function);
+}
+```
+* The `Fn`, `FnMut` and `FnOnce` traits also dictate how a closure captures variables from the enclosing scope.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/fn.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/methods.html
@@ -368,3 +390,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/capture.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/input_parameters.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/anonymity.html
+* https://doc.rust-lang.org/stable/rust-by-example/fn/closures/input_functions.html
