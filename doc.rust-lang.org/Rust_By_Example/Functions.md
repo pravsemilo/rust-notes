@@ -467,3 +467,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/input_functions.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/output_parameters.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/closure_examples.html
+* https://doc.rust-lang.org/stable/rust-by-example/fn/closures/closure_examples/iter_any.html
