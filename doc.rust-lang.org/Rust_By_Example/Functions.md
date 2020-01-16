@@ -499,6 +499,46 @@ fn main() {
     println!("Find 2 in array2: {:?}", array2.into_iter().find(|&&x| x == 2));
 }
 ```
+## Higher Order Functions
+* Higher order functions are functions that take one or more functions and / or produce a more useful function.
+* Higher order functions and lazy iterators give Rust its functional flavor.
+* [Option](https://doc.rust-lang.org/core/option/enum.Option.html) and [Iterator](https://doc.rust-lang.org/core/iter/trait.Iterator.html) implement their fair share of higher order functions.
+```rust
+fn is_odd(n: u32) -> bool {
+    n % 2 == 1
+}
+
+fn main() {
+    println!("Find the sum of all the squared odd numbers under 1000");
+    let upper = 1000;
+
+    // Imperative approach
+    // Declare accumulator variable
+    let mut acc = 0;
+    // Iterate: 0, 1, 2, ... to infinity
+    for n in 0.. {
+        // Square the number
+        let n_squared = n * n;
+
+        if n_squared >= upper {
+            // Break loop if exceeded the upper limit
+            break;
+        } else if is_odd(n_squared) {
+            // Accumulate value, if it's odd
+            acc += n_squared;
+        }
+    }
+    println!("imperative style: {}", acc);
+
+    // Functional approach
+    let sum_of_squared_odd_numbers: u32 =
+        (0..).map(|n| n * n)                             // All natural numbers squared
+             .take_while(|&n_squared| n_squared < upper) // Below upper limit
+             .filter(|&n_squared| is_odd(n_squared))     // That are odd
+             .fold(0, |acc, n_squared| acc + n_squared); // Sum them
+    println!("functional style: {}", sum_of_squared_odd_numbers);
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/fn.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/methods.html
@@ -511,3 +551,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/closure_examples.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/closure_examples/iter_any.html
 * https://doc.rust-lang.org/stable/rust-by-example/fn/closures/closure_examples/iter_find.html
+* https://doc.rust-lang.org/stable/rust-by-example/fn/hof.html
