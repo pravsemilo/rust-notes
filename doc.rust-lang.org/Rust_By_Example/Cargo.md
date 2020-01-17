@@ -22,7 +22,7 @@ foo
 ```
 	* `main.rs` is the root source file for the project.
 	* `Cargo.toml` is the `cargo` config file.
-```rust
+```toml
 [package]
 name = "foo"
 version = "0.1.0"
