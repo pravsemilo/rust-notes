@@ -29,6 +29,32 @@ $ rustc --crate-type=lib rary.rs
 $ ls lib*
 library.rlib
 ```
+## `extern crate`
+* Use `extern crate` declaration to link a crate to a library.
+* This will also import all the library's items under a module named the same as the library.
+* The visiblity rules that apply to modules also apply to libraries.
+```rust
+// Link to `library`, import items under the `rary` module
+extern crate rary;
+
+fn main() {
+    rary::public_function();
+
+    // Error! `private_function` is private
+    //rary::private_function();
+
+    rary::indirect_access();
+}
+```
+```bash
+# Where library.rlib is the path to the compiled library, assumed that it's
+# in the same directory here:
+$ rustc executable.rs --extern rary=library.rlib && ./executable
+called rary's `public_function()`
+called rary's `indirect_access()`, that
+> called rary's `private_function()`
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/crates.html
 * https://doc.rust-lang.org/stable/rust-by-example/crates/lib.html
+* https://doc.rust-lang.org/stable/rust-by-example/crates/link.html
