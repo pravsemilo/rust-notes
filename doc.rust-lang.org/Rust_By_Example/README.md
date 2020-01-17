@@ -14,7 +14,7 @@
 1. [Modules](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Modules.md)
 1. [Crates](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Crates.md)
 1. [Cargo]()
-1. [Attributes]()
+1. [Attributes](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Attributes.md)
 1. [Generics]()
 1. [Scoping rules](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Scoping_rules.md)
 1. [Traits](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Traits.md)
