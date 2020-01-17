@@ -6,7 +6,7 @@
 	* Awareness of benchmarks
 ## Dependencies
 * To create a new Rust project :
-```rust
+```bash
 # A binary
 cargo new foo
 
@@ -22,14 +22,14 @@ foo
 ```
 	* `main.rs` is the root source file for the project.
 	* `Cargo.toml` is the `cargo` config file.
-	```
-	[package]
-	name = "foo"
-	version = "0.1.0"
-	authors = ["mark"]
+```rust
+[package]
+name = "foo"
+version = "0.1.0"
+authors = ["mark"]
 
-	[dependencies]
-	```
+[dependencies]
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/cargo.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/deps.html
