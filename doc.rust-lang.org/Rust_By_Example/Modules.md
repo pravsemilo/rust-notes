@@ -277,9 +277,89 @@ fn main() {
     my::indirect_call();
 }
 ```
+## File hierarchy
+* Breaking down the [visibility example](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Modules.md#visibility) in files :
+```bash
+$ tree .
+.
+|-- my
+|   |-- inaccessible.rs
+|   |-- mod.rs
+|   `-- nested.rs
+`-- split.rs
+```
+	* `split.rs`
+	```rust
+	// This declaration will look for a file named `my.rs` or `my/mod.rs` and will
+	// insert its contents inside a module named `my` under this scope
+	mod my;
+
+	fn function() {
+	    println!("called `function()`");
+	}
+
+	fn main() {
+	    my::function();
+
+	    function();
+
+	    my::indirect_access();
+
+	    my::nested::function();
+	}
+	```
+	* `my/mod.rs`
+	```rust
+	// Similarly `mod inaccessible` and `mod nested` will locate the `nested.rs`
+	// and `inaccessible.rs` files and insert them here under their respective
+	// modules
+	mod inaccessible;
+	pub mod nested;
+
+	pub fn function() {
+	    println!("called `my::function()`");
+	}
+
+	fn private_function() {
+	    println!("called `my::private_function()`");
+	}
+
+	pub fn indirect_access() {
+	    print!("called `my::indirect_access()`, that\n> ");
+
+	    private_function();
+	}
+	```
+	* `my/nested.rs`
+	```rust
+	pub fn function() {
+	    println!("called `my::nested::function()`");
+	}
+
+	#[allow(dead_code)]
+	fn private_function() {
+	    println!("called `my::nested::private_function()`");
+	}
+	```
+	* `my/inaccessible.rs`
+	```rust
+	#[allow(dead_code)]
+	pub fn public_function() {
+	    println!("called `my::inaccessible::public_function()`");
+	}
+	```
+```bash
+$ rustc split.rs && ./split
+called `my::function()`
+called `function()`
+called `my::indirect_access()`, that
+> called `my::private_function()`
+called `my::nested::function()`
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/mod.html
 * https://doc.rust-lang.org/stable/rust-by-example/mod/visibility.html
 * https://doc.rust-lang.org/stable/rust-by-example/mod/struct_visibility.html
 * https://doc.rust-lang.org/stable/rust-by-example/mod/use.html
 * https://doc.rust-lang.org/stable/rust-by-example/mod/super.html
+* https://doc.rust-lang.org/stable/rust-by-example/mod/split.html
