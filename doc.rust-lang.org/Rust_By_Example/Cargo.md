@@ -20,8 +20,8 @@ foo
 └── src
     └── main.rs
 ```
-	* `main.rs` is the root source file for the project.
-	* `Cargo.toml` is the `cargo` config file.
+* `main.rs` is the root source file for the project.
+* `Cargo.toml` is the `cargo` config file.
 ```toml
 [package]
 name = "foo"
