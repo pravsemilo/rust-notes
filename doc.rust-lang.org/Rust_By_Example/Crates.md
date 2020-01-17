@@ -5,6 +5,6 @@
 	* Modules do _not_ get compiled individually, only crates get compiled.
 * Crate can be compiled into a binary or into a library.
 	* By default, `rustc` will produce a binary from a crate.
-	* This can be overridden by passing the `--crate-type` flag to `rustc`.
+	* This can be overridden by passing the `--crate-type=lib` flag to `rustc`.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/crates.html
