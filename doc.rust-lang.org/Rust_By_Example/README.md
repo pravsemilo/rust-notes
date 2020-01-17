@@ -12,7 +12,7 @@
 1. [Flow of Control](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Flow_of_Control.md)
 1. [Functions](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Functions.md)
 1. [Modules](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Modules.md)
-1. [Crates]()
+1. [Crates](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Crates.md)
 1. [Cargo]()
 1. [Attributes]()
 1. [Generics]()
