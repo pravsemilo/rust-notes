@@ -60,7 +60,7 @@ $ cargo run
 * [crates.io](https://crates.io/) is the package registry for Rust.
 * In Rust, we refer to packages as `crates`.
 * To add a dependency, edit your `Cargo.toml`
-```rust
+```toml
 [dependencies]
 ferris-says = "0.1"
 ```
