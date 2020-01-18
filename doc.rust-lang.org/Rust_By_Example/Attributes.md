@@ -97,6 +97,22 @@ fn main() {
 }
 ```
 ### Custom
+* Some conditionals like `target_os` are implicitly provided by `rustc`.
+* Custom conditionals must be passed to `rustc` using the `--cfg` flag.
+```rust
+#[cfg(some_condition)]
+fn conditional_function() {
+    println!("condition met!");
+}
+
+fn main() {
+    conditional_function();
+}
+```
+```bash
+$ rustc --cfg some_condition custom.rs && ./custom
+condition met!
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/attribute.html
 * https://doc.rust-lang.org/stable/rust-by-example/attribute/unused.html
