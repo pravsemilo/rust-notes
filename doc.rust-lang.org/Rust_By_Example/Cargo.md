@@ -63,7 +63,28 @@ foo
         └── my_other_bin.rs
 ```
 * To tell `cargo` to compile / run this binary, we pass the `--bin my_other_bin` flag.
+## Tests
+* Organizationally we can place unit tests in the modules they test and integration test in their own `tests/` directory :
+	* Each file in `tests` is a separate integration test.
+```foo
+├── Cargo.toml
+├── src
+│   └── main.rs
+└── tests
+    ├── my_test.rs
+    └── my_other_test.rs
+```
+* To run tests :
+```bash
+$ cargo test
+```
+* To run tests whose name matches a pattern :
+```bash
+$ cargo test test_foo
+```
+* Cargo may run multiple tests concurrently.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/cargo.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/deps.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/conventions.html
+* https://doc.rust-lang.org/stable/rust-by-example/cargo/test.html
