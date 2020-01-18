@@ -70,7 +70,7 @@ library.rlib
 ```
 ## `cfg`
 * Conditional compilation is possible through two different operators :
-	* `cfg` attribute : `#[cfg(...)] in attribute position.
+	* `cfg` attribute : `#[cfg(...)]` in attribute position.
 	* `cfg!` macro : `cfg!(...)` in boolean expressions.
 ```rust
 // This function only gets compiled if the target OS is linux
