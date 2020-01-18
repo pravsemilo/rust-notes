@@ -83,8 +83,24 @@ $ cargo test
 $ cargo test test_foo
 ```
 * Cargo may run multiple tests concurrently.
+## Build Scripts
+* Cargo will look for a `build.rs` in the project directory by default.
+* To add a build script, you can specify it in `Cargo.toml` :
+```toml
+[package]
+...
+build = "build.rs"
+```
+* __How to use a build script__
+* Build script is simply another Rust file that will be compiled and invoked prior to compiling anything else in the package.
+* It can be used to fulfill any pre-requisites of your crate.
+* Cargo provides the script with inputs via environment variables [specified here](https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts).
+* The script provides output via stdout.
+	* All lines printed are written to `target/debug/build/<pkg>/output`.
+* Lines prefixed with `cargo:` will be interpreted by Cargo directly and hence can be used to define parameters for the package's compilation.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/cargo.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/deps.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/conventions.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/test.html
+* https://doc.rust-lang.org/stable/rust-by-example/cargo/build_scripts.html
