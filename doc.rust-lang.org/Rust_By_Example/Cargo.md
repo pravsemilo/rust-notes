@@ -51,6 +51,19 @@ bar = { path = "../bar" } # from a path in the local filesystem
 * To build our project, you can execute `cargo build` anywhere in the project directory including subdirectories.
 * You can do `cargo run` to build and run.
 * These commands will resolve all dependencies, download crates and build everything including your crate.
+## Conventions
+* The default binary name in `main`.
+* You can add addtional binaries by placing them in a `bin/` directory :
+```
+foo
+├── Cargo.toml
+└── src
+    ├── main.rs
+    └── bin
+        └── my_other_bin.rs
+```
+* To tell `cargo` to compile / run this binary, we pass the `--bin my_other_bin` flag.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/cargo.html
 * https://doc.rust-lang.org/stable/rust-by-example/cargo/deps.html
+* https://doc.rust-lang.org/stable/rust-by-example/cargo/conventions.html
