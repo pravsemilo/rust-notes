@@ -13,15 +13,15 @@ cargo new foo
 # OR A library
 cargo new --lib foo
 ```
-	* Above command results in the following directory structure :
+* Above command results in the following directory structure :
 ```
 foo
 ├── Cargo.toml
 └── src
     └── main.rs
 ```
-	* `main.rs` is the root source file for the project.
-	* `Cargo.toml` is the `cargo` config file.
+* `main.rs` is the root source file for the project.
+* `Cargo.toml` is the `cargo` config file.
 ```toml
 [package]
 name = "foo"
