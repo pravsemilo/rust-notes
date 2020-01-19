@@ -159,7 +159,7 @@ fn main() {
 ## Closures
 * Closures are functions that can capture the enclosing environment.
 * Closure are also called lambda expressions or lambdas.
-* For example, a closure that captures the x variable.
+* For example, a closure that captures the x variable :
 ```rust
 |val| val + x
 ```
