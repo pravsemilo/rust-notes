@@ -355,14 +355,14 @@ fn main() {
 }
 ```
 ### Type anonymity
-* When a closure id defined, the compiler implicitly creates a new anonymous structure to store the captured variables inside.
+* When a closure is defined, the compiler implicitly creates a new anonymous structure to store the captured variables inside.
 * The compiler also implements the functionality via one of the traits : `Fn`, `FnMut` or `FnOnce` for the unknown type.
 * This type is assigned to the variable which is stored until calling.
 * Since this new type is of unknown type, any usage in a function will require generics.
 * In this case an unbounded type parameter woule be ambiguous.
 * However bounding by one of the traits : `Fn`, `FnMut` or `FnOnce` is sufficient.
 ### Input functions
-* If a function takes a closure as inout parameter, then any function that satisfies the trait bound can be passed as a parameter.
+* If a function takes a closure as input parameter, then any function that satisfies the trait bound can be passed as a parameter.
 ```rust
 // Define a function which takes a generic `F` argument
 // bounded by `Fn`, and calls it
@@ -385,7 +385,7 @@ fn main() {
 ```
 * The `Fn`, `FnMut` and `FnOnce` traits also dictate how a closure captures variables from the enclosing scope.
 ### As output parameters
-* Since anonymous clousre types are unknown, we have to use `impl <<Trait>>` to return them.
+* Since anonymous closure types are unknown, we have to use `impl <<Trait>>` to return them.
 * Valid traits for returning a closure are :
 	* `Fn`
 	* `FnMut`
