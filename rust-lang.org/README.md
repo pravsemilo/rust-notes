@@ -11,7 +11,7 @@
 ### Productivity
 * Great documentation.
 * Friendly compiler with useful error messages.
-* Top Notch Tooling
+* Top notch tooling
 	* Integrated package manager
 	* Build tool
 	* Smart multi-editor support with auto-completion and type inspection.
