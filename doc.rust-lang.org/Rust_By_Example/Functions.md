@@ -360,13 +360,10 @@ fn main() {
 * This type is assigned to the variable which is stored until calling.
 * Since this new type is of unknown type, any usage in a function will require generics.
 ```rust
-#![allow(unused_variables)]
-fn main() {
 // `F` must be generic.
 fn apply<F>(f: F) where
     F: FnOnce() {
     f();
-}
 }
 ```
 * In this case an unbounded type parameter woule be ambiguous.
