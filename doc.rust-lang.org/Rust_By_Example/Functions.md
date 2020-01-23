@@ -296,7 +296,7 @@ fn main() {
 ```
 ### As input parameters
 * When a function takes a closure as an input parameter, the closure's complete type must be annotated using following `traits` in decreasing order.
-	* `Fn` : The closure captures by referencec (`&T`).
+	* `Fn` : The closure captures by reference (`&T`).
 	* `FnMut` : The closure captures by mutable reference (`&mut T`).
 	* `FnOnce` : The closure captures by value (`T`).
 * On a variable by variable basis, the compiler will capture variables in the least restrictive manner.
