@@ -417,7 +417,7 @@ fn main() {
 	* `FnMut`
 	* `FnOnce`
 * Also the `move` keyword must be used, which signals that all captures occur by value.
-* This is because any captures by reference would be dropped as soon as the function exited, leaving invalid references in the closure.
+* This is because any captured by reference would be dropped as soon as the function exited, leaving invalid references in the closure.
 ```rust
 fn create_fn() -> impl Fn() {
     let text = "Fn".to_owned();
