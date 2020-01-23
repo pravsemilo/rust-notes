@@ -359,8 +359,37 @@ fn main() {
 * The compiler also implements the functionality via one of the traits : `Fn`, `FnMut` or `FnOnce` for the unknown type.
 * This type is assigned to the variable which is stored until calling.
 * Since this new type is of unknown type, any usage in a function will require generics.
+```rust
+#![allow(unused_variables)]
+fn main() {
+// `F` must be generic.
+fn apply<F>(f: F) where
+    F: FnOnce() {
+    f();
+}
+}
+```
 * In this case an unbounded type parameter woule be ambiguous.
 * However bounding by one of the traits : `Fn`, `FnMut` or `FnOnce` is sufficient.
+```rust
+// `F` must implement `Fn` for a closure which takes no
+// inputs and returns nothing - exactly what is required
+// for `print`.
+fn apply<F>(f: F) where
+    F: Fn() {
+    f();
+}
+
+fn main() {
+    let x = 7;
+
+    // Capture `x` into an anonymous type and implement
+    // `Fn` for it. Store it in `print`.
+    let print = || println!("{}", x);
+
+    apply(print);
+}
+```
 ### Input functions
 * If a function takes a closure as input parameter, then any function that satisfies the trait bound can be passed as a parameter.
 ```rust
