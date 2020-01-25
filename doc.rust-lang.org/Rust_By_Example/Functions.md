@@ -1,5 +1,5 @@
 # Functions
-* Functions are declared used the `fn` keyword.
+* Functions are declared using the `fn` keyword.
 * Its arguments are type annotated.
 * If the function returns a value, the return type must be specified after an arrow `->`.
 * The final expression in the function will be used as return value.
