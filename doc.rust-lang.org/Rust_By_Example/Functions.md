@@ -366,7 +366,7 @@ fn apply<F>(f: F) where
     f();
 }
 ```
-* In this case an unbounded type parameter woule be ambiguous.
+* In this case an unbounded type parameter would be ambiguous.
 * However bounding by one of the traits : `Fn`, `FnMut` or `FnOnce` is sufficient.
 ```rust
 // `F` must implement `Fn` for a closure which takes no
