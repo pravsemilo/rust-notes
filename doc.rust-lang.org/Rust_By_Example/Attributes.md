@@ -41,7 +41,7 @@ fn main() {
 ## Crates
 * The `crate_type` attribute can be used to tell the compiler whether a crate is a binary or a library (and even which type of library).
 * The `crate_name` attribute can be used to set the name of the crate.
-* It is important to note that both these attributes have __no__ effect when using Carg.
+* It is important to note that both these attributes have __no__ effect when using Cargo.
 ```rust
 // This crate is a library
 #![crate_type = "lib"]
