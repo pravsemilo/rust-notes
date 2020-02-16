@@ -19,7 +19,7 @@
 #[attribute(value, value2)]
 
 #[attribute(value, value2, value3,
-            value4, value5)]
+	value4, value5)]
 ```
 ## `dead_code`
 * The compiler provides a `dead_code` _lint_ that will warn about unused function.
@@ -35,7 +35,7 @@ fn noisy_unused_function() {}
 // FIXME ^ Add an attribute to suppress the warning
 
 fn main() {
-    used_function();
+	used_function();
 }
 ```
 ## Crates
@@ -49,17 +49,17 @@ fn main() {
 #![crate_name = "rary"]
 
 pub fn public_function() {
-    println!("called rary's `public_function()`");
+	println!("called rary's `public_function()`");
 }
 
 fn private_function() {
-    println!("called rary's `private_function()`");
+	println!("called rary's `private_function()`");
 }
 
 pub fn indirect_access() {
-    print!("called rary's `indirect_access()`, that\n> ");
+	print!("called rary's `indirect_access()`, that\n> ");
 
-    private_function();
+	private_function();
 }
 ```
 * When `crate_type` attribute is used, we no longer need to pass the `--crate-type` flag to `rustc`.
@@ -76,24 +76,24 @@ library.rlib
 // This function only gets compiled if the target OS is linux
 #[cfg(target_os = "linux")]
 fn are_you_on_linux() {
-    println!("You are running linux!");
+	println!("You are running linux!");
 }
 
 // And this function only gets compiled if the target OS is *not* linux
 #[cfg(not(target_os = "linux"))]
 fn are_you_on_linux() {
-    println!("You are *not* running linux!");
+	println!("You are *not* running linux!");
 }
 
 fn main() {
-    are_you_on_linux();
+	are_you_on_linux();
 
-    println!("Are you sure?");
-    if cfg!(target_os = "linux") {
-        println!("Yes. It's definitely linux!");
-    } else {
-        println!("Yes. It's definitely *not* linux!");
-    }
+	println!("Are you sure?");
+	if cfg!(target_os = "linux") {
+		println!("Yes. It's definitely linux!");
+	} else {
+		println!("Yes. It's definitely *not* linux!");
+	}
 }
 ```
 ### Custom
@@ -102,11 +102,11 @@ fn main() {
 ```rust
 #[cfg(some_condition)]
 fn conditional_function() {
-    println!("condition met!");
+	println!("condition met!");
 }
 
 fn main() {
-    conditional_function();
+	conditional_function();
 }
 ```
 ```bash
