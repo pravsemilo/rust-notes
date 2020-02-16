@@ -1,7 +1,7 @@
 # Attributes
 * Attribute is metadata applied to some module, crate or item.
 * This metadata can be used to / for :
-	* [conditional compilation of some comde](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Attributes.md#cfg)
+	* [conditional compilation of some code](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Attributes.md#cfg)
 	* [set crate name, version and type (binary or library)](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Attributes.md#crates)
 	* disable lints (warnings)
 	* enable compiler features (macros, glob imports etc.)
