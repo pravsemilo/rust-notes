@@ -11,17 +11,17 @@
 * This name can be overridden using the [`crate_name` attribute](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Attributes.md#crates).
 ```rust
 pub fn public_function() {
-    println!("called rary's `public_function()`");
+	println!("called rary's `public_function()`");
 }
 
 fn private_function() {
-    println!("called rary's `private_function()`");
+	println!("called rary's `private_function()`");
 }
 
 pub fn indirect_access() {
-    print!("called rary's `indirect_access()`, that\n> ");
+	print!("called rary's `indirect_access()`, that\n> ");
 
-    private_function();
+	private_function();
 }
 ```
 ```bash
@@ -38,12 +38,12 @@ library.rlib
 extern crate rary;
 
 fn main() {
-    rary::public_function();
+	rary::public_function();
 
-    // Error! `private_function` is private
-    //rary::private_function();
+	// Error! `private_function` is private
+	//rary::private_function();
 
-    rary::indirect_access();
+	rary::indirect_access();
 }
 ```
 ```bash
