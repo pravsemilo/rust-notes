@@ -12,9 +12,8 @@ struct A;
 
 // In defining the type `Single`, the first use of `A` is not preceded by `<A>`.
 // Therefore, `Single` is a concrete type, and `A` is defined as above.
-struct	Single(A);
-//		^ Here is `Single`s first use of the type `A`.
-
+struct Single(A);
+//            ^ Here is `Single`s first use of the type `A`.
 // Here, `<T>` precedes the first use of `T`, so `SingleGen` is a generic type.
 // Because the type parameter `T` is generic, it could be anything, including
 // the concrete type `A` defined at the top.
