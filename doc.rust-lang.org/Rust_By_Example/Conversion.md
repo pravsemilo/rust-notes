@@ -14,24 +14,24 @@
 	let my_str = "hello";
 	let my_string = String::from(my_str);
 	```
-	* We can also define  a conversion for our own type.
+	* We can also define a conversion for our own type.
 	```rust
 	use std::convert::From;
 
 	#[derive(Debug)]
 	struct Number {
-	    value: i32,
+		value: i32,
 	}
 
 	impl From<i32> for Number {
-	    fn from(item: i32) -> Self {
-		Number { value: item }
-	    }
+		fn from(item: i32) -> Self {
+			Number { value: item }
+		}
 	}
 
 	fn main() {
-	    let num = Number::from(30);
-	    println!("My number is {:?}", num);
+		let num = Number::from(30);
+		println!("My number is {:?}", num);
 	}
 	```
 * __[Into](https://doc.rust-lang.org/std/convert/trait.Into.html)__
@@ -43,20 +43,20 @@
 
 	#[derive(Debug)]
 	struct Number {
-	    value: i32,
+		value: i32,
 	}
 
 	impl From<i32> for Number {
-	    fn from(item: i32) -> Self {
-		Number { value: item }
-	    }
+		fn from(item: i32) -> Self {
+			Number { value: item }
+		}
 	}
 
 	fn main() {
-	    let int = 5;
-	    // Try removing the type declaration
-	    let num: Number = int.into();
-	    println!("My number is {:?}", num);
+		let int = 5;
+		// Try removing the type declaration
+		let num: Number = int.into();
+		println!("My number is {:?}", num);
 	}
 	```
 ## TryFrom and TryInto
@@ -70,29 +70,29 @@ use std::convert::TryInto;
 struct EvenNumber(i32);
 
 impl TryFrom<i32> for EvenNumber {
-    type Error = ();
+	type Error = ();
 
-    fn try_from(value: i32) -> Result<Self, Self::Error> {
-        if value % 2 == 0 {
-            Ok(EvenNumber(value))
-        } else {
-            Err(())
-        }
-    }
+	fn try_from(value: i32) -> Result<Self, Self::Error> {
+		if value % 2 == 0 {
+			Ok(EvenNumber(value))
+		} else {
+			Err(())
+		}
+	}
 }
 
 fn main() {
-    // TryFrom
+	// TryFrom
 
-    assert_eq!(EvenNumber::try_from(8), Ok(EvenNumber(8)));
-    assert_eq!(EvenNumber::try_from(5), Err(()));
+	assert_eq!(EvenNumber::try_from(8), Ok(EvenNumber(8)));
+	assert_eq!(EvenNumber::try_from(5), Err(()));
 
-    // TryInto
+	// TryInto
 
-    let result: Result<EvenNumber, ()> = 8i32.try_into();
-    assert_eq!(result, Ok(EvenNumber(8)));
-    let result: Result<EvenNumber, ()> = 5i32.try_into();
-    assert_eq!(result, Err(()));
+	let result: Result<EvenNumber, ()> = 8i32.try_into();
+	assert_eq!(result, Ok(EvenNumber(8)));
+	let result: Result<EvenNumber, ()> = 5i32.try_into();
+	assert_eq!(result, Err(()));
 }
 ```
 ## To and from Strings
@@ -105,18 +105,18 @@ fn main() {
 	use std::fmt;
 
 	struct Circle {
-	    radius: i32
+		radius: i32
 	}
 
 	impl fmt::Display for Circle {
-	    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-		write!(f, "Circle of radius {}", self.radius)
-	    }
+		fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+			write!(f, "Circle of radius {}", self.radius)
+		}
 	}
 
 	fn main() {
-	    let circle = Circle { radius: 6 };
-	    println!("{}", circle.to_string());
+		let circle = Circle { radius: 6 };
+		println!("{}", circle.to_string());
 	}
 	```
 * __Parsing a String__
@@ -129,11 +129,11 @@ fn main() {
 		* For user defined types implement the [FromStr](https://doc.rust-lang.org/std/str/trait.FromStr.html) trait for that type.
 	```rust
 	fn main() {
-	    let parsed: i32 = "5".parse().unwrap();
-	    let turbo_parsed = "10".parse::<i32>().unwrap();
+		let parsed: i32 = "5".parse().unwrap();
+		let turbo_parsed = "10".parse::<i32>().unwrap();
 
-	    let sum = parsed + turbo_parsed;
-	    println!("Sum: {:?}", sum);
+		let sum = parsed + turbo_parsed;
+		println!("Sum: {:?}", sum);
 	}
 	```
 # References
