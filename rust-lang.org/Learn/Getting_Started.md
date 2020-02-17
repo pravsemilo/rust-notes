@@ -48,9 +48,9 @@ $ cargo new hello-rust
 	* `src/main.rs` - Contains application code.
 	```
 	hello-rust
-	|------	Cargo.toml
-	|------	src
-		|------	main.rs
+	|- Cargo.toml
+	|- src
+	  |- main.rs
 	```
 * To run the project.
 ```bash
