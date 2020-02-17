@@ -18,8 +18,9 @@
 ```rust
 #[attribute(value, value2)]
 
+
 #[attribute(value, value2, value3,
-	value4, value5)]
+            value4, value5)]
 ```
 ## `dead_code`
 * The compiler provides a `dead_code` _lint_ that will warn about unused function.
