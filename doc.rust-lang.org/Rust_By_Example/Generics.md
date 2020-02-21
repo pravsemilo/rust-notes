@@ -2,7 +2,7 @@
 * _Generics_ are used to generalize types and functionalities to broader cases.
 * Helps in reducing code duplication.
 * Syntax is rather complex.
-* Requires great care to specify over which types a generic types is considered valid.
+* Requires great care to specify over which types a generic type is considered valid.
 * Type Parameters
 	* Simplest and common use of generics.
 	* Specified by angle brackets and upper camel case.
