@@ -140,7 +140,7 @@ impl<T, U> DoubleDrop<T> for U {
 
 fn main() {
 	let empty = Empty;
-	let null  = Null;
+	let null = Null;
 
 	// Deallocate `empty` and `null`.
 	empty.double_drop(null);
@@ -183,7 +183,7 @@ impl HasArea for Rectangle {
 #[derive(Debug)]
 struct Rectangle { length: f64, height: f64 }
 #[allow(dead_code)]
-struct Triangle  { length: f64, height: f64 }
+struct Triangle { length: f64, height: f64 }
 
 // The generic `T` must implement `Debug`. Regardless
 // of the type, this will work properly.
@@ -197,7 +197,7 @@ fn area<T: HasArea>(t: &T) -> f64 { t.area() }
 
 fn main() {
 	let rectangle = Rectangle { length: 3.0, height: 4.0 };
-	let _triangle = Triangle  { length: 3.0, height: 4.0 };
+	let _triangle = Triangle { length: 3.0, height: 4.0 };
 
 	print_debug(&rectangle);
 	println!("Area: {}", area(&rectangle));
@@ -209,7 +209,7 @@ fn main() {
 }
 ```
 ### Testcase : empty bounds
-* Even if a `trait` doesn't include any  functionality, you can still use it as a bound.
+* Even if a `trait` doesn't include any functionality, you can still use it as a bound.
 * `Eq` and `Ord` are examples of such `traits` from the `std` library.
 ```rust
 struct Cardinal;
@@ -224,20 +224,20 @@ impl Blue for BlueJay {}
 
 // These functions are only valid for types which implement these
 // traits. The fact that the traits are empty is irrelevant.
-fn red<T: Red>(_: &T)   -> &'static str { "red" }
+fn red<T: Red>(_: &T) -> &'static str { "red" }
 fn blue<T: Blue>(_: &T) -> &'static str { "blue" }
 
 fn main() {
-    let cardinal = Cardinal;
-    let blue_jay = BlueJay;
-    let _turkey   = Turkey;
+	let cardinal = Cardinal;
+	let blue_jay = BlueJay;
+	let _turkey = Turkey;
 
-    // `red()` won't work on a blue jay nor vice versa
-    // because of the bounds.
-    println!("A cardinal is {}", red(&cardinal));
-    println!("A blue jay is {}", blue(&blue_jay));
-    //println!("A turkey is {}", red(&_turkey));
-    // ^ TODO: Try uncommenting this line.
+	// `red()` won't work on a blue jay nor vice versa
+	// because of the bounds.
+	println!("A cardinal is {}", red(&cardinal));
+	println!("A blue jay is {}", blue(&blue_jay));
+	//println!("A turkey is {}", red(&_turkey));
+	// ^ TODO: Try uncommenting this line.
 }
 ```
 ## Multiple bounds
@@ -246,25 +246,25 @@ fn main() {
 use std::fmt::{Debug, Display};
 
 fn compare_prints<T: Debug + Display>(t: &T) {
-    println!("Debug: `{:?}`", t);
-    println!("Display: `{}`", t);
+	println!("Debug: `{:?}`", t);
+	println!("Display: `{}`", t);
 }
 
 fn compare_types<T: Debug, U: Debug>(t: &T, u: &U) {
-    println!("t: `{:?}`", t);
-    println!("u: `{:?}`", u);
+	println!("t: `{:?}`", t);
+	println!("u: `{:?}`", u);
 }
 
 fn main() {
-    let string = "words";
-    let array = [1, 2, 3];
-    let vec = vec![1, 2, 3];
+	let string = "words";
+	let array = [1, 2, 3];
+	let vec = vec![1, 2, 3];
 
-    compare_prints(&string);
-    //compare_prints(&array);
-    // TODO ^ Try uncommenting this.
+	compare_prints(&string);
+	//compare_prints(&array);
+	// TODO ^ Try uncommenting this.
 
-    compare_types(&array, &vec);
+	compare_types(&array, &vec);
 }
 ```
 # References
