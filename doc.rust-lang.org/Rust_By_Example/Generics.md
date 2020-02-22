@@ -208,6 +208,7 @@ fn main() {
 	// | Error: Does not implement either `Debug` or `HasArea`.
 }
 ```
+* [where](https://github.com/pravsemilo/rust-notes/blob/master/doc.rust-lang.org/Rust_By_Example/Generics.md#where-clauses) can also be used to apply expressive bounds.
 ### Testcase : empty bounds
 * Even if a `trait` doesn't include any functionality, you can still use it as a bound.
 * `Eq` and `Ord` are examples of such `traits` from the `std` library.
