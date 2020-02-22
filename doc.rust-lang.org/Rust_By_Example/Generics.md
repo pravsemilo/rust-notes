@@ -346,6 +346,10 @@ fn main() {
 	let years_as_primitive: i64 = years.0;
 }
 ```
+## Associated items
+* "Associated items" refers to a set of rules pertaining to [item]i(https://doc.rust-lang.org/reference/items.html)s of various types.
+* It is an extension to `trait` generices and allows `traits` to define new items.
+* One such item is called an _associated type_, providing simpler usage patterns when the `trait` is generic over its container type.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/generics.html
 * https://doc.rust-lang.org/stable/rust-by-example/generics/gen_fn.html
@@ -356,3 +360,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/generics/multi_bounds.html
 * https://doc.rust-lang.org/stable/rust-by-example/generics/where.html
 * https://doc.rust-lang.org/stable/rust-by-example/generics/new_types.html
+* https://doc.rust-lang.org/stable/rust-by-example/generics/assoc_items.html
