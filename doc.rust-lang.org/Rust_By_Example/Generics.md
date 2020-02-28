@@ -351,7 +351,7 @@ fn main() {
 * "Associated items" refers to a set of rules pertaining to [item](https://doc.rust-lang.org/reference/items.html)s of various types.
 * It is an extension to `trait` generics and allows `traits` to internally define new items.
 * One such item is called an _associated type_, providing simpler usage patterns when the `trait` is generic over its container type.
-## The Problem
+### The Problem
 * A `trait` that is generic over its container type has type specification requirements. Users of the `trait` _must_ specify all of its generic types.
 ```rust
 struct Container(i32, i32);
@@ -399,7 +399,7 @@ fn main() {
 	println!("The difference is: {}", difference(&container));
 }
 ```
-## Associated types
+### Associated types
 * Improves code readability by moving inner types locally into a trait as _output_ types.
 ```rust
 // `A` and `B` are defined in the trait via the `type` keyword.
