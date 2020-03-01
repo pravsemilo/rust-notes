@@ -129,7 +129,7 @@ fn main() {
 	println!("One foot is {} than one meter.", cmp);
 }
 ```
-## Returning Traits with dyn
+## Returning Traits with `dyn`
 ## Operator Overloading
 ## Drop
 ## Iterators
