@@ -360,6 +360,33 @@ fn main() {
 }
 ```
 ## Lifetimes
+* A _lifetime_ is a contruct the compiler (or more specifically, its _borrow checker_) uses to ensure all borrows are valid.
+* A variables lifetime begins when it is created and end when it is destroyed.
+* Lifetime and scopes are often referred to together, they are not the same.
+```rust
+// Lifetimes are annotated below with lines denoting the creation
+// and destruction of each variable.
+// `i` has the longest lifetime because its scope entirely encloses
+// both `borrow1` and `borrow2`. The duration of `borrow1` compared
+// to `borrow2` is irrelevant since they are disjoint.
+fn main() {
+	let i = 3; // Lifetime for `i` starts. ─────────────────────────────────┐
+	//									│
+	{ //									│
+		let borrow1 = &i; // `borrow1` lifetime starts. ────────┐	│
+		//							│	│
+		println!("borrow1: {}", borrow1); //			│	│
+	} // `borrow1 ends. ────────────────────────────────────────────┘	│
+	//									│
+	//									│
+	{ //									│
+		let borrow2 = &i; // `borrow2` lifetime starts. ────────┐	│
+		//							│	│
+		println!("borrow2: {}", borrow2); //			│	│
+	} // `borrow2` ends. ───────────────────────────────────────────┘	│
+	//									│
+}	// Lifetime ends. ──────────────────────────────────────────────────────┘
+```
 ### Explicit annotation
 ### Functions
 ### Methods
