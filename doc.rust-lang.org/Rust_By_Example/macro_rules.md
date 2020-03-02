@@ -222,6 +222,34 @@ fn main() {
 }
 ```
 * Note the two pairs of braces in the macro. The outer ones are part of the syntax of `macro_rules!`, in addition to `()` or `[]`.
+## Variaidic Interfaces
+* A _variadic_ interface takes an arbitrary number of arguments.
+	* Example : `println!`.
+```rust
+macro_rules! calculate {
+	// The pattern for a single `eval`
+	(eval $e:expr) => {{
+		{
+			let val: usize = $e; // Force types to be integers
+			println!("{} = {}", stringify!{$e}, val);
+		}
+	}};
+
+	// Decompose multiple `eval`s recursively
+	(eval $e:expr, $(eval $es:expr),+) => {{
+		calculate! { eval $e }
+		calculate! { $(eval $es),+ }
+	}};
+}
+
+fn main() {
+	calculate! { // Look ma! Variadic `calculate!`!
+		eval 1 + 2,
+		eval 3 + 4,
+		eval (2 * 3) + 1
+	}
+}
+```
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/macros.html
 * https://doc.rust-lang.org/stable/rust-by-example/macros/syntax.html
@@ -230,3 +258,4 @@ fn main() {
 * https://doc.rust-lang.org/stable/rust-by-example/macros/repeat.html
 * https://doc.rust-lang.org/stable/rust-by-example/macros/dry.html
 * https://doc.rust-lang.org/stable/rust-by-example/macros/dsl.html
+* https://doc.rust-lang.org/stable/rust-by-example/macros/variadics.html
