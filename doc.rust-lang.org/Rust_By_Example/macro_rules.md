@@ -197,6 +197,31 @@ test test::sub_assign ... ok
 
 test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
 ```
+## DSL (Domain Specific Languages)
+* A DSL is a mini language embedded in a Rust macro.
+* It is completely valid Rust because the macro system expands into normal Rust constructs.
+* Since it looks like a small language, it allows you to define concise and intuitive syntax.
+```rust
+macro_rules! calculate {
+	(eval $e:expr) => {{
+		{
+			let val: usize = $e; // Force types to be integers
+			println!("{} = {}", stringify!{$e}, val);
+		}
+	}};
+}
+
+fn main() {
+	calculate! {
+		eval 1 + 2 // hehehe `eval` is _not_ a Rust keyword!
+	}
+
+	calculate! {
+		eval (1 + 2) * (3 / 4)
+	}
+}
+```
+* Note the two pairs of braces in the macro. The outer ones are part of the syntax of `macro_rules!`, in addition to `()` or `[]`.
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/macros.html
 * https://doc.rust-lang.org/stable/rust-by-example/macros/syntax.html
@@ -204,3 +229,4 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
 * https://doc.rust-lang.org/stable/rust-by-example/macros/overload.html
 * https://doc.rust-lang.org/stable/rust-by-example/macros/repeat.html
 * https://doc.rust-lang.org/stable/rust-by-example/macros/dry.html
+* https://doc.rust-lang.org/stable/rust-by-example/macros/dsl.html
