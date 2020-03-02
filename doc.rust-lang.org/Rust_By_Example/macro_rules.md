@@ -19,5 +19,7 @@ fn main() {
 	say_hello!()
 }
 ```
+## Syntax
 # References
 * https://doc.rust-lang.org/stable/rust-by-example/macros.html
+* https://doc.rust-lang.org/stable/rust-by-example/macros/syntax.html
