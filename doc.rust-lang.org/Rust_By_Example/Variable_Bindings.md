@@ -25,7 +25,7 @@ fn main() {
 }
 ```
 ## Mutability
-* Variable binding are immutable by default, but this can be overridden using the `mut` modifier.
+* Variable bindings are immutable by default, but this can be overridden using the `mut` modifier.
 * The compiler will throw a detailed diagnostic about mutability errors.
 ```rust
 fn main() {
