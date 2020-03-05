@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 * __Destructor__
-* Provided through the [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait.
-* Destructor is called when the resource goes out of scope.
-* Required to be implemented only if you require its own destructor logic.
+	* Provided through the [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait.
+	* Destructor is called when the resource goes out of scope.
+	* Required to be implemented only if you require its own destructor logic.
 ```rust
 struct ToDrop;
 
